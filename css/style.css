@@ -1,135 +1,157 @@
-.container {
-    max-width: 1000px; /* batas lebar container */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.d-md-flex.flex-md-equal {
-    justify-content: space-between; /* agar kiri-kanan mepet ke container */
-    align-items: center;
-}
-
-.d-md-flex.flex-md-equal > div {
-    flex: 1; /* dua kolom sama lebar */
-}
-
-.icon-link > .bi {
-  width: .75em;
-  height: .75em;
-}
-
-/*
- * Custom translucent site header
- */
-
-.site-header {
-  background-color: rgba(0, 0, 0, .85);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-}
-.site-header a {
-  color: #fffefe;
-  transition: color .15s ease-in-out;
-}
-.site-header a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-.site-header {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem; /* jarak dalam: atas-bawah 1rem, kiri-kanan 2rem */
-  margin: 10px 20px;  /* jarak luar: atas-bawah 10px, kiri-kanan 20px */
-  border-radius: 8px; /* opsional, biar sudutnya agak membulat */
-/*
- * Dummy devices (replace them with your own or something else entirely!)
- */
-
-.product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  transform: rotate(30deg);
-}
-
-.product-device::before {
-  position: absolute;
-  top: 10%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
-  content: "";
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 5px;
-}
-
-.product-device-2 {
-  top: -25%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  background-color: #e5e5e5;
-}
-
-/*
- * Extra utilities
- */
-
-.flex-equal > * {
-  flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    flex: 1;
-  }
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
 :root {
-  --primary: #ff9800; /* warna garis bawah */
+  --primary: #ff9800;
+
+  --color-light: #000000;
+  --bg-light: #ffffff;
+  --nav-bg-light: #ffffff;
+  --nav-text-light: #000000;
+
+  --color-dark: #eeeeee;
+  --bg-dark: #121212;
+  --nav-bg-dark: #222222;
+  --nav-text-dark: #eeeeee;
 }
 
-.navbar .navbar-nav .nav-link {
+/* Reset dan container */
+body {
+  background-color: var(--bg-light);
+  color: var(--color-light);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--nav-bg-light);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s;
+}
+
+/* WARNA LINK NAVBAR */
+.navbar .nav-link {
+  color: var(--nav-text-light);
+  text-decoration: none;
+  margin: 0 0.5rem;
   position: relative;
-  color: white;
+  transition: color 0.3s;
 }
 
-.navbar .navbar-nav .nav-link::after {
+.navbar .nav-link::after {
   content: '';
   display: block;
-  border-bottom: 0.1rem solid var(--primary);
+  border-bottom: 2px solid var(--primary);
   transform: scaleX(0);
-  transition: transform 0.2s linear;
+  transition: transform 0.3s;
   transform-origin: left;
+  position: absolute;
+  width: 100%;
+  bottom: -4px;
+  left: 0;
 }
 
-.navbar .navbar-nav .nav-link:hover::after {
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
   transform: scaleX(1);
 }
 
-.nav-pills .nav-link.active {
-  background-color: #1004fd;
-  color: #ffffff !important;
-}
-.body {
-  background-image: linear-gradient(180deg, var(--bs-secondary-bg), var(--bs-body-bg) 100px, var(--bs-body-bg));
-}
-
-.pricing-header {
-  max-width: 700px;
+/* BRAND NAME di navbar */
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--nav-text-light);
+  transition: color 0.3s;
 }
 
-.bd-mode-toggle {
-    bottom: 30px; /* jarak dari tepi bawah layar */
+/* Logo */
+#logoLight {
+  display: inline;
+  height: 40px;
+  transition: opacity 0.3s;
 }
 
-.bd-mode-toggle button:first-child {
-    margin-bottom: 10px; /* jarak antar tombol */
+#logoDark {
+  display: none;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+/* Tombol toggle theme */
+#btnThemeToggle {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: var(--color-light);
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0;
+}
+
+#btnThemeToggle svg {
+  display: block;
+}
+
+/* Heading umum */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-light);
+  transition: color 0.3s;
+  margin-top: 2rem;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--color-dark);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--nav-bg-dark);
+}
+
+body.dark-mode .navbar .nav-link {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode .navbar .navbar-brand {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode #logoLight {
+  display: none;
+}
+
+body.dark-mode #logoDark {
+  display: inline;
+}
+
+body.dark-mode #btnThemeToggle {
+  color: var(--color-dark);
+}
+
+/* Override heading agar ikut warna dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode h5.text-muted,
+body.dark-mode h5.text-secondary {
+  color: var(--color-dark) !important;
+}
+
+/* Jika ada komponen yang pakai kelas .text-bg-dark, override supaya teks juga putih */
+body.dark-mode .text-bg-dark {
+  color: var(--color-dark) !important;
 }
