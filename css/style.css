@@ -140,10 +140,13 @@ body.dark-mode #btnThemeToggle {
 }
 
 /* Override heading agar ikut warna dark mode */
+body.dark-mode small,
+body.dark-mode p,
+body.dark-mode a,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
-body.dark-mode h4,
+body.dark-mode h4.text-muted,
 body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode h5.text-muted,
@@ -154,4 +157,27 @@ body.dark-mode h5.text-secondary {
 /* Jika ada komponen yang pakai kelas .text-bg-dark, override supaya teks juga putih */
 body.dark-mode .text-bg-dark {
   color: var(--color-dark) !important;
+}
+
+main.dark-mode {
+  background-color: #121212; /* contoh background gelap */
+  color: #eee; /* teks terang */
+}
+
+/* Jika perlu override background lain dalam main */
+main.dark-mode .container,
+main.dark-mode .card {
+  background-color: #222; /* contoh warna card saat dark mode */
+  color: #ddd;
+}
+
+/* Sesuaikan tombol jika perlu */
+main.dark-mode .btn-outline-secondary {
+  color: #bbb;
+  border-color: #bbb;
+}
+main.dark-mode .btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #444;
+  border-color: #444;
 }

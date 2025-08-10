@@ -5,82 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prabatama - Jasa Konsultan-Kontruksi</title>
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-    crossorigin="anonymous"
-  />
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+            crossorigin="anonymous">
+            <meta name="theme-color" content="#712cf9">
+    <link href="css/style.css" rel="stylesheet">
   <style>
     /* Root variables for light mode */
-    :root {
-        --color-light: #000;
-        --color-dark: #fff;
-        --bg-light: #fff;
-        --bg-dark: #121212;
-        --nav-bg-light: #f8f9fa;
-        --nav-bg-dark: #212529;
-    }
+            :root {
+                --color-light: #000;
+                --color-dark: #fff;
+                --bg-light: #fff;
+                --bg-dark: #121212;
+                --nav-bg-light: #f8f9fa;
+                --nav-bg-dark: #212529;
+            }
 
-    body {
-        background-color: var(--bg-light);
-        color: var(--color-light);
-        transition: background-color 0.3s, color 0.3s;
-    }
+            body {
+                background-color: var(--bg-light);
+                color: var(--color-light);
+                transition: background-color 0.3s, color 0.3s;
+            }
 
-    body.dark-mode {
-        background-color: var(--bg-dark);
-        color: var(--color-dark);
-    }
+            body.dark-mode {
+                background-color: var(--bg-dark);
+                color: var(--color-dark);
+            }
 
-    nav.navbar {
-        background-color: var(--nav-bg-light);
-        transition: background-color 0.3s;
-    }
+            nav.navbar {
+                background-color: var(--nav-bg-light);
+                transition: background-color 0.3s;
+            }
 
-    body.dark-mode nav.navbar {
-        background-color: var(--nav-bg-dark);
-    }
+            body.dark-mode nav.navbar {
+                background-color: var(--nav-bg-dark);
+            }
 
-    nav.navbar .nav-link {
-        color: var(--color-light);
-        transition: color 0.3s;
-    }
+            nav.navbar .nav-link {
+                color: var(--color-light);
+                transition: color 0.3s;
+            }
 
-    body.dark-mode nav.navbar .nav-link {
-        color: var(--color-dark);
-    }
+            body.dark-mode nav.navbar .nav-link {
+                color: var(--color-dark);
+            }
 
-    #btnThemeToggle {
-        width: 36px;
-        height: 36px;
-        border: none; /* hapus border */
-        background-color: transparent;
-        color: var(--color-light);
-        padding: 0;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
+            #btnThemeToggle {
+                width: 36px;
+                height: 36px;
+                border: none; /* hapus border */
+                background-color: transparent;
+                color: var(--color-light);
+                padding: 0;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
 
-    body.dark-mode #btnThemeToggle {
-        color: var(--color-dark);
-    }
+            body.dark-mode #btnThemeToggle {
+                color: var(--color-dark);
+            }
 
-    /* Ikon tersembunyi / tampil berdasarkan mode */
-    #btnThemeToggle svg#icon-moon {
-        display: inline;
-    }
+            /* Ikon tersembunyi / tampil berdasarkan mode */
+            #btnThemeToggle svg#icon-moon {
+                display: inline;
+            }
 
-    body.dark-mode #btnThemeToggle svg#icon-moon {
-        display: none;
-    }
+            body.dark-mode #btnThemeToggle svg#icon-moon {
+                display: none;
+            }
 
-    #btnThemeToggle svg#icon-sun {
-        display: none;
-    }
+            #btnThemeToggle svg#icon-sun {
+                display: none;
+            }
 
-    body.dark-mode #btnThemeToggle svg#icon-sun {
-        display: inline;
-    }
+            body.dark-mode #btnThemeToggle svg#icon-sun {
+                display: inline;
+            }
+            /* Styling tombol WhatsApp */
+            .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* ukuran tombol */
+            height: 60px;
+            border-radius: 50%; /* bulat */
+            background-color: #25D366; /* hijau WhatsApp */
+            color: white;
+            font-size: 28px; /* ukuran icon */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            /* Efek hover membesar */
+            .btn-whatsapp:hover {
+            transform: scale(1.2); /* membesar 20% */
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            }
   </style>
 </head>
 <body>
@@ -108,58 +129,59 @@
   </svg>
   <!-- Navbar -->
     <nav class="navbar navbar-expand-md">
-        <div class="container">
-            <a class="navbar-brand" href="/index.html" id="brandName">Prabatama</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav nav-pills">
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/project/index.html">Project</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/service/index.html">Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about/index.html">About</a></li>
-                </ul>
-            </div>
-            <button
-                id="btnThemeToggle"
-                aria-label="Toggle Dark Mode"
-                title="Toggle Dark Mode"
-                type="button"
-            >
-                <svg
-                id="icon-moon"
-                class="bi"
-                width="24"
-                height="24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                >
-                <use xlink:href="#moon-stars-fill"></use>
-                </svg>
-                <svg
-                id="icon-sun"
-                class="bi"
-                width="24"
-                height="24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                >
-                <use xlink:href="#sun-fill"></use>
-                </svg>
-            </button>
-        </div>
-    </nav>
+                <div class="container">
+                    <a class="navbar-brand" href="/index.html" id="brandName">Prabatama</a>
+                    <button
+                        id="btnThemeToggle"
+                        aria-label="Toggle Dark Mode"
+                        title="Toggle Dark Mode"
+                        type="button"
+                    >
+                        <svg
+                        id="icon-moon"
+                        class="bi"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        >
+                        <use xlink:href="#moon-stars-fill"></use>
+                        </svg>
+                        <svg
+                        id="icon-sun"
+                        class="bi"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        >
+                        <use xlink:href="#sun-fill"></use>
+                        </svg>
+                    </button>    
+                    <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+                        
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav nav-pills">
+                            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/project/index.html">Project</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/service/index.html">Service</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/about/index.html">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
     <div class="position-fixed end-0 me-3 bd-mode-toggle d-flex flex-row-reverse gap-2" style="bottom: 30px;">
         <div class="position-fixed end-0 me-3 bd-mode-toggle" style="bottom: 30px;"> 
             <!-- Tombol Up -->
