@@ -11,110 +11,8 @@
             crossorigin="anonymous">
             <meta name="theme-color" content="#712cf9">
         
-        <link href="../css/style.css" rel="stylesheet">
-        <style> 
-            /* Root variables for light mode */
-            :root {
-                --color-light: #000;
-                --color-dark: #fff;
-                --bg-light: #fff;
-                --bg-dark: #121212;
-                --nav-bg-light: #f8f9fa;
-                --nav-bg-dark: #212529;
-            }
-
-            body {
-                background-color: var(--bg-light);
-                color: var(--color-light);
-                transition: background-color 0.3s, color 0.3s;
-            }
-
-            body.dark-mode {
-                background-color: var(--bg-dark);
-                color: var(--color-dark);
-            }
-
-            nav.navbar {
-                background-color: var(--nav-bg-light);
-                transition: background-color 0.3s;
-            }
-
-            body.dark-mode nav.navbar {
-                background-color: var(--nav-bg-dark);
-            }
-
-            nav.navbar .nav-link {
-                color: var(--color-light);
-                transition: color 0.3s;
-            }
-
-            body.dark-mode nav.navbar .nav-link {
-                color: var(--color-dark);
-            }
-
-            #btnThemeToggle {
-                width: 36px;
-                height: 36px;
-                border: none; /* hapus border */
-                background-color: transparent;
-                color: var(--color-light);
-                padding: 0;
-                cursor: pointer;
-                transition: color 0.3s;
-            }
-
-            body.dark-mode #btnThemeToggle {
-                color: var(--color-dark);
-            }
-
-            /* Ikon tersembunyi / tampil berdasarkan mode */
-            #btnThemeToggle svg#icon-moon {
-                display: inline;
-            }
-
-            body.dark-mode #btnThemeToggle svg#icon-moon {
-                display: none;
-            }
-
-            #btnThemeToggle svg#icon-sun {
-                display: none;
-            }
-
-            body.dark-mode #btnThemeToggle svg#icon-sun {
-                display: inline;
-            }
-            /* Styling tombol WhatsApp */
-            .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px; /* ukuran tombol */
-            height: 60px;
-            border-radius: 50%; /* bulat */
-            background-color: #25D366; /* hijau WhatsApp */
-            color: white;
-            font-size: 28px; /* ukuran icon */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-
-            /* Efek hover membesar */
-            .btn-whatsapp:hover {
-            transform: scale(1.2); /* membesar 20% */
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-            }
-              /* Jangan biarkan teks di card-body berubah warna saat dark mode */
-            body.dark-mode .card-body {
-                color: #000 !important;
-            }
-
-            /* Jika ada elemen dengan kelas text-muted atau text-body-secondary dalam card-body,
-                kamu juga bisa override agar tidak berubah */
-            body.dark-mode .card-body .text-muted,
-            body.dark-mode .card-body .text-body-secondary {
-                color: #6c757d !important; /* warna abu standar bootstrap */
-            }
-        </style>
+        <link href="../assets/css/style.css" rel="stylesheet">
+        <link href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.css" rel="stylesheet">
     </head>
         <body>
             <!-- SVG symbols for icons -->
@@ -173,7 +71,7 @@
             <nav class="navbar navbar-expand-md">
                 <div class="container">
                     <div class="logo-crop">
-                    <img src="../img/logo-light.png"
+                    <img src="../assets/img/logo-light.png"
                         alt="logo-pratma-light-mode"
                         class="logo-img"
                         id="logo"
@@ -224,7 +122,17 @@
                         <ul class="navbar-nav nav-pills">
                             <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="index.html">Project</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../service/index.html">Service</a></li>
+                                <!-- Service sebagai dropdown -->
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="../service/index.html" id="serviceDropdown" role="button" 
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Service
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="serviceDropdown">
+                                        <li><a class="dropdown-item" href="#">Pelayanan</a></li>
+                                        <li><a class="dropdown-item" href="#">Estimasi Biaya</a></li>
+                                    </ul>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="../about/index.html">About</a></li>
                         </ul>
                     </div>
@@ -241,7 +149,55 @@
                             </div>
                         </div>
                     </div>
-                <!-- isi porto  -->
+                
+                <section id="portfolio" class="portfolio section">
+                    <div class="container">
+                        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                        <ul class="portfolio-filters isotope-filters">
+                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter=".filter-bangun">Bangun</li>
+                            <li data-filter=".filter-renov">Renov</li>
+                        </ul>
+                        <div class="row gy-4 isotope-container">
+                            <!-- Filter: App -->
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+                                <img src="../assets/img/portfolio/bangun1.jpg" class="img-fluid" alt="rumah">
+                                <div class="portfolio-info">
+                                <h4>Bangun 1</h4>
+                                <p>Rumah Dedy</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+                                <img src="../assets/img/portfolio/bangun2.jpg" class="img-fluid" alt="kos-kosan">
+                                <div class="portfolio-info">
+                                <h4>Bangun 2</h4>
+                                <p>Rumah adit</p>
+                                </div>
+                            </div>
+
+                            <!-- Filter: Card -->
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+                                <img src="../assets/img/portfolio/renov1.jpg" class="img-fluid" alt="renov rumah">
+                                <div class="portfolio-info">
+                                <h4>Renov 1</h4>
+                                <p>renov rumah dedy</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+                                <img src="../assets/img/portfolio/renov2.jpg" class="img-fluid" alt="renov rumah">
+                                <div class="portfolio-info">
+                                <h4>Renov 2</h4>
+                                <p>renov rumah dedy</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                    </section>
+
             </main>
 
             <footer id="footer" class="container py-5"> 
@@ -294,108 +250,9 @@
                 crossorigin="anonymous" 
                 class="astro-vvvwv3sm">
             </script>
-                <script>
-                    const btnUp = document.getElementById('btnUp');
-                    const btnDown = document.getElementById('btnDown');
-                    const navbar = document.querySelector('nav') || document.getElementById('navbar'); // Sesuaikan selector navbar
-                    const footer = document.querySelector('footer') || document.getElementById('footer'); // Sesuaikan selector footer
-                        function scrollToElement(element) {
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }
-                    btnUp.addEventListener('click', () => scrollToElement(navbar));
-                    btnDown.addEventListener('click', () => scrollToElement(footer));
-
-                    function checkScroll() {
-                        const scrollY = window.scrollY || window.pageYOffset;
-                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                        const footerTop = footer ? footer.getBoundingClientRect().top + window.scrollY : document.body.scrollHeight;
-                            // Sembunyikan tombol Up jika scroll di posisi navbar (atas)
-                            if (scrollY <= navbarHeight + 10) {
-                                btnUp.style.display = 'none';
-                            } else {
-                                btnUp.style.display = 'flex';
-                            }
-                            // Sembunyikan tombol Down jika sudah di posisi footer (bawah)
-                            if (scrollY + window.innerHeight >= footerTop - 10) {
-                                btnDown.style.display = 'none';
-                            } else {
-                                btnDown.style.display = 'flex';
-                            }
-                    }
-
-                    window.addEventListener('scroll', checkScroll);
-                    window.addEventListener('load', checkScroll);
-                </script>
-            <!-- Dark mode toggle script -->
-            <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const logoEl = document.getElementById('logo');
-                        const btnThemeToggle = document.getElementById('btnThemeToggle');
-                        const mql = window.matchMedia('(prefers-color-scheme: dark)');
-                        const FADE_MS = 250;
-
-                        if (!logoEl || !btnThemeToggle) return; // jika elemen hilang, stop
-
-                        const savedTheme = () => localStorage.getItem('theme'); // 'dark' | 'light' | null
-                        const systemTheme = () => (mql.matches ? 'dark' : 'light');
-
-                        function getEffectiveThemeOnLoad() {
-                        const saved = savedTheme();
-                        if (saved === 'dark' || saved === 'light') return saved;
-                        // cek apakah body sudah diberi class (mis. server-side)
-                        if (document.body.classList.contains('dark-mode')) return 'dark';
-                        if (document.body.classList.contains('light-mode')) return 'light';
-                        return systemTheme();
-                        }
-
-                        function setLogoSrc(theme) {
-                        const newSrc = theme === 'dark' ? '../img/logo-dark.png' : '../img/logo-light.png';
-                        const newAlt = theme === 'dark' ? 'logo-pratma-dark-mode' : 'logo-pratma-light-mode';
-
-                        // kalau sama, tidak usah ubah
-                        if (logoEl.getAttribute('src') === newSrc) return;
-
-                        // fade out -> ganti src -> fade in
-                        logoEl.style.opacity = 0;
-                        // beri waktu sesuai transition
-                        setTimeout(() => {
-                            logoEl.src = newSrc;
-                            logoEl.alt = newAlt;
-                            // small timeout agar browser reflow sebelum fade-in (lebih halus)
-                            requestAnimationFrame(() => {
-                            logoEl.style.opacity = 1;
-                            });
-                        }, FADE_MS);
-                        }
-
-                        function applyTheme(theme, save = false) {
-                        document.body.classList.remove('dark-mode', 'light-mode');
-                        document.body.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
-                        if (save) localStorage.setItem('theme', theme);
-                        setLogoSrc(theme);
-                        }
-
-                        // Init theme on load (don't overwrite stored choice except when deciding)
-                        const initial = getEffectiveThemeOnLoad();
-                        applyTheme(initial, false);
-
-                        // Toggle button -> ganti theme dan simpan pilihan user
-                        btnThemeToggle.addEventListener('click', () => {
-                        const current = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-                        const next = current === 'dark' ? 'light' : 'dark';
-                        applyTheme(next, true);
-                        });
-
-                        // Jika system theme berubah, otomatis update hanya bila user belum memilih manual (no saved theme)
-                        mql.addEventListener('change', (e) => {
-                        if (!savedTheme()) {
-                            const sys = e.matches ? 'dark' : 'light';
-                            applyTheme(sys, false);
-                        }
-                        });
-                    });
-                    </script>   
+            
+            <!-- main js -->
+            <script src="../assets/js/main.js"></script>
+            <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> 
         </body> 
 </html>
