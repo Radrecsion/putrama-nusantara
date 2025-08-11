@@ -172,58 +172,40 @@
             </div>
             <nav class="navbar navbar-expand-md">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.html" id="brandName">Prabatama</a>
-                    <button
-                        id="btnThemeToggle"
-                        aria-label="Toggle Dark Mode"
-                        title="Toggle Dark Mode"
-                        type="button"
-                    >
-                        <svg
-                        id="icon-moon"
-                        class="bi"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        >
+                    <div class="logo-crop">
+                    <img src="../img/logo-light.png"
+                        alt="logo-pratma-light-mode"
+                        class="logo-img"
+                        id="logo"
+                    />
+                    </div>
+
+                    <button id="btnThemeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode" type="button">
+                    <svg id="icon-moon" class="bi" width="24" height="24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <use xlink:href="#moon-stars-fill"></use>
-                        </svg>
-                        <svg
-                        id="icon-sun"
-                        class="bi"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        >
+                    </svg>
+                    <svg id="icon-sun" class="bi" width="24" height="24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <use xlink:href="#sun-fill"></use>
-                        </svg>
-                    </button>    
-                    <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
+                    </svg>
                     </button>
-                        
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../project/index.html">Project</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../service/index.html">Service</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
-                        </ul>
+                    <ul class="navbar-nav nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="..project/index.html">Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../about/index.html">About</a></li>
+                    </ul>
                     </div>
                 </div>
-            </nav>
+                </nav>
             <main>
                 <div class="container">
                     <div class="container my-5">
@@ -452,60 +434,72 @@
                 class="astro-vvvwv3sm">
             </script>
                 <script>
-                    const btnUp = document.getElementById('btnUp');
-                    const btnDown = document.getElementById('btnDown');
-                    const navbar = document.querySelector('nav') || document.getElementById('navbar'); // Sesuaikan selector navbar
-                    const footer = document.querySelector('footer') || document.getElementById('footer'); // Sesuaikan selector footer
-                        function scrollToElement(element) {
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const logoEl = document.getElementById('logo');
+                        const btnThemeToggle = document.getElementById('btnThemeToggle');
+                        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+                        const FADE_MS = 250;
+
+                        if (!logoEl || !btnThemeToggle) return; // jika elemen hilang, stop
+
+                        const savedTheme = () => localStorage.getItem('theme'); // 'dark' | 'light' | null
+                        const systemTheme = () => (mql.matches ? 'dark' : 'light');
+
+                        function getEffectiveThemeOnLoad() {
+                        const saved = savedTheme();
+                        if (saved === 'dark' || saved === 'light') return saved;
+                        // cek apakah body sudah diberi class (mis. server-side)
+                        if (document.body.classList.contains('dark-mode')) return 'dark';
+                        if (document.body.classList.contains('light-mode')) return 'light';
+                        return systemTheme();
                         }
-                    btnUp.addEventListener('click', () => scrollToElement(navbar));
-                    btnDown.addEventListener('click', () => scrollToElement(footer));
 
-                    function checkScroll() {
-                        const scrollY = window.scrollY || window.pageYOffset;
-                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                        const footerTop = footer ? footer.getBoundingClientRect().top + window.scrollY : document.body.scrollHeight;
-                            // Sembunyikan tombol Up jika scroll di posisi navbar (atas)
-                            if (scrollY <= navbarHeight + 10) {
-                                btnUp.style.display = 'none';
-                            } else {
-                                btnUp.style.display = 'flex';
-                            }
-                            // Sembunyikan tombol Down jika sudah di posisi footer (bawah)
-                            if (scrollY + window.innerHeight >= footerTop - 10) {
-                                btnDown.style.display = 'none';
-                            } else {
-                                btnDown.style.display = 'flex';
-                            }
-                    }
+                        function setLogoSrc(theme) {
+                        const newSrc = theme === 'dark' ? '../img/logo-dark.png' : '../img/logo-light.png';
+                        const newAlt = theme === 'dark' ? 'logo-pratma-dark-mode' : 'logo-pratma-light-mode';
 
-                    window.addEventListener('scroll', checkScroll);
-                    window.addEventListener('load', checkScroll);
-                </script>
-            <!-- Dark mode toggle script -->
-            <script>
-                const btnThemeToggle = document.getElementById('btnThemeToggle');
-                const body = document.body;
+                        // kalau sama, tidak usah ubah
+                        if (logoEl.getAttribute('src') === newSrc) return;
 
-                btnThemeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-                // Optional: simpan preferensi ke localStorage
-                if(body.classList.contains('dark-mode')){
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-                });
+                        // fade out -> ganti src -> fade in
+                        logoEl.style.opacity = 0;
+                        // beri waktu sesuai transition
+                        setTimeout(() => {
+                            logoEl.src = newSrc;
+                            logoEl.alt = newAlt;
+                            // small timeout agar browser reflow sebelum fade-in (lebih halus)
+                            requestAnimationFrame(() => {
+                            logoEl.style.opacity = 1;
+                            });
+                        }, FADE_MS);
+                        }
 
-                // Load tema saat halaman dibuka
-                window.addEventListener('DOMContentLoaded', () => {
-                if(localStorage.getItem('theme') === 'dark'){
-                    body.classList.add('dark-mode');
-                }
-                });
-            </script>    
+                        function applyTheme(theme, save = false) {
+                        document.body.classList.remove('dark-mode', 'light-mode');
+                        document.body.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+                        if (save) localStorage.setItem('theme', theme);
+                        setLogoSrc(theme);
+                        }
+
+                        // Init theme on load (don't overwrite stored choice except when deciding)
+                        const initial = getEffectiveThemeOnLoad();
+                        applyTheme(initial, false);
+
+                        // Toggle button -> ganti theme dan simpan pilihan user
+                        btnThemeToggle.addEventListener('click', () => {
+                        const current = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                        const next = current === 'dark' ? 'light' : 'dark';
+                        applyTheme(next, true);
+                        });
+
+                        // Jika system theme berubah, otomatis update hanya bila user belum memilih manual (no saved theme)
+                        mql.addEventListener('change', (e) => {
+                        if (!savedTheme()) {
+                            const sys = e.matches ? 'dark' : 'light';
+                            applyTheme(sys, false);
+                        }
+                        });
+                    });
+                    </script>    
         </body> 
 </html>

@@ -181,3 +181,18 @@ main.dark-mode .btn-outline-secondary:hover {
   background-color: #444;
   border-color: #444;
 }
+
+/* =====================
+   LOGO RESPONSIF (NO CROP)
+   ===================== */
+
+/* Logo responsif mengikuti ukuran layar */
+.logo-img {
+  width: clamp(80px, 15vw, 250px); /* min: 80px, ideal: 15% layar, max: 250px */
+  height: auto;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+
+
