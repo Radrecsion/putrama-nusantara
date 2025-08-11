@@ -172,7 +172,13 @@
             </div> 
             <nav class="navbar navbar-expand-md">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.html" id="brandName">Prabatama</a>
+                    <div class="logo-crop">
+                    <img src="../img/logo-light.png"
+                        alt="logo-pratma-light-mode"
+                        class="logo-img"
+                        id="logo"
+                    />
+                    </div>
                     <button
                         id="btnThemeToggle"
                         aria-label="Toggle Dark Mode"
@@ -324,25 +330,72 @@
                 </script>
             <!-- Dark mode toggle script -->
             <script>
-                const btnThemeToggle = document.getElementById('btnThemeToggle');
-                const body = document.body;
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const logoEl = document.getElementById('logo');
+                        const btnThemeToggle = document.getElementById('btnThemeToggle');
+                        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+                        const FADE_MS = 250;
 
-                btnThemeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-                // Optional: simpan preferensi ke localStorage
-                if(body.classList.contains('dark-mode')){
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-                });
+                        if (!logoEl || !btnThemeToggle) return; // jika elemen hilang, stop
 
-                // Load tema saat halaman dibuka
-                window.addEventListener('DOMContentLoaded', () => {
-                if(localStorage.getItem('theme') === 'dark'){
-                    body.classList.add('dark-mode');
-                }
-                });
-            </script>   
+                        const savedTheme = () => localStorage.getItem('theme'); // 'dark' | 'light' | null
+                        const systemTheme = () => (mql.matches ? 'dark' : 'light');
+
+                        function getEffectiveThemeOnLoad() {
+                        const saved = savedTheme();
+                        if (saved === 'dark' || saved === 'light') return saved;
+                        // cek apakah body sudah diberi class (mis. server-side)
+                        if (document.body.classList.contains('dark-mode')) return 'dark';
+                        if (document.body.classList.contains('light-mode')) return 'light';
+                        return systemTheme();
+                        }
+
+                        function setLogoSrc(theme) {
+                        const newSrc = theme === 'dark' ? '../img/logo-dark.png' : '../img/logo-light.png';
+                        const newAlt = theme === 'dark' ? 'logo-pratma-dark-mode' : 'logo-pratma-light-mode';
+
+                        // kalau sama, tidak usah ubah
+                        if (logoEl.getAttribute('src') === newSrc) return;
+
+                        // fade out -> ganti src -> fade in
+                        logoEl.style.opacity = 0;
+                        // beri waktu sesuai transition
+                        setTimeout(() => {
+                            logoEl.src = newSrc;
+                            logoEl.alt = newAlt;
+                            // small timeout agar browser reflow sebelum fade-in (lebih halus)
+                            requestAnimationFrame(() => {
+                            logoEl.style.opacity = 1;
+                            });
+                        }, FADE_MS);
+                        }
+
+                        function applyTheme(theme, save = false) {
+                        document.body.classList.remove('dark-mode', 'light-mode');
+                        document.body.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+                        if (save) localStorage.setItem('theme', theme);
+                        setLogoSrc(theme);
+                        }
+
+                        // Init theme on load (don't overwrite stored choice except when deciding)
+                        const initial = getEffectiveThemeOnLoad();
+                        applyTheme(initial, false);
+
+                        // Toggle button -> ganti theme dan simpan pilihan user
+                        btnThemeToggle.addEventListener('click', () => {
+                        const current = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                        const next = current === 'dark' ? 'light' : 'dark';
+                        applyTheme(next, true);
+                        });
+
+                        // Jika system theme berubah, otomatis update hanya bila user belum memilih manual (no saved theme)
+                        mql.addEventListener('change', (e) => {
+                        if (!savedTheme()) {
+                            const sys = e.matches ? 'dark' : 'light';
+                            applyTheme(sys, false);
+                        }
+                        });
+                    });
+                    </script>   
         </body> 
 </html>
