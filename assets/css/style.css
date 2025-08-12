@@ -295,60 +295,93 @@ body.dark-mode .navbar-toggler-icon {
 }
 
 
-/* Dark/Light adaptive dropdown */
-[data-bs-theme="light"] .dropdown-menu {
+/* ===== DROPDOWN TOGGLE ARROW ===== */
+.caret-icon {
+  margin-left: 0.35em;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* Rotasi panah saat dropdown aktif (mobile & desktop) */
+.navbar .dropdown.show > .dropdown-toggle .caret-icon,
+.navbar .dropdown:hover > .dropdown-toggle .caret-icon {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   DROPDOWN MENU
+   ========================= */
+.navbar .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Light mode */
+body:not(.dark-mode) .dropdown-menu {
   background-color: #fff;
   color: #000;
-}
-
-[data-bs-theme="dark"] .dropdown-menu {
-  background-color: #212529;
-  color: #fff;
-}
-
-[data-bs-theme="dark"] .dropdown-menu a {
-  color: #fff;
-}
-
-[data-bs-theme="light"] .dropdown-menu a {
-  color: #000;
-}
-
-.dropdown-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Light mode dropdown */
-body:not(.dark-mode) .dropdown-menu {
-  background-color: var(--bg-light);
-  color: var(--color-light);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 body:not(.dark-mode) .dropdown-menu a {
-  color: var(--color-light);
+  color: #000;
 }
 
-/* Dark mode dropdown */
+body:not(.dark-mode) .dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+/* Dark mode */
 body.dark-mode .dropdown-menu {
-  background-color: var(--nav-bg-dark);
-  color: var(--color-dark);
+  background-color: #212529;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 body.dark-mode .dropdown-menu a {
-  color: var(--color-dark);
+  color: #fff;
 }
 
 body.dark-mode .dropdown-menu a:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-.navbar .dropdown {
-  position: relative;
+/* =========================
+   DROPDOWN BEHAVIOR
+   ========================= */
+@media (min-width: 992px) {
+  /* Desktop: dropdown muncul saat hover */
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
 }
 
-.navbar .dropdown-menu {
-  position: absolute;
-  top: 100%; /* Tepat di bawah */
-  left: 0;   /* Sejajar kiri */
-  min-width: max-content; /* Lebar sesuai isi dropdown */
+/* Mobile: rotasi saat dropdown dibuka */
+@media (max-width: 720px) {
+  .navbar .dropdown.show > .dropdown-toggle .caret-icon {
+    transform: rotate(180deg);
+  }
+}
+
+/* Animasi kemunculan dropdown */
+.dropdown-menu {
+  animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
