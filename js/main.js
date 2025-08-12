@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function setLogoSrc(theme) {
-          const newSrc = theme === 'dark' ? '../assets/img/logo-dark.png' : '../assets/img/logo-light.png';
+          const newSrc = theme === 'dark' ? 'logo-dark.png' : 'logo-light.png';
           const newAlt = theme === 'dark' ? 'logo-pratma-dark-mode' : 'logo-pratma-light-mode';
 
           // kalau sama, tidak usah ubah
