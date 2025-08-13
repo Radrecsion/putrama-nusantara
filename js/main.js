@@ -191,3 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   observer.observe(hero);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Fade-up section
+  const fadeSections = document.querySelectorAll('.fade-up-section');
+
+  const fadeObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+
+        // Animasi tiap card dalam section
+        const cards = entry.target.querySelectorAll('.fade-up-card, .services-card');
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('animate'), i * 150); // delay 150ms tiap card
+        });
+
+        obs.unobserve(entry.target); // hanya sekali
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeSections.forEach(section => fadeObserver.observe(section));
+
+});
