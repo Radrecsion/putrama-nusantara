@@ -67,39 +67,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-// scroll up/down
+// // scroll up/down
+// const btnUp = document.getElementById('btnUp');
+//         const btnDown = document.getElementById('btnDown');
+//         const navbar = document.querySelector('nav') || document.getElementById('navbar'); // Sesuaikan selector navbar
+//         const footer = document.querySelector('footer') || document.getElementById('footer'); // Sesuaikan selector footer
+//             function scrollToElement(element) {
+//                 if (element) {
+//                     element.scrollIntoView({ behavior: 'smooth' });
+//                 }
+//             }
+//         btnUp.addEventListener('click', () => scrollToElement(navbar));
+//         btnDown.addEventListener('click', () => scrollToElement(footer));
+
+//         function checkScroll() {
+//             const scrollY = window.scrollY || window.pageYOffset;
+//             const navbarHeight = navbar ? navbar.offsetHeight : 0;
+//             const footerTop = footer ? footer.getBoundingClientRect().top + window.scrollY : document.body.scrollHeight;
+//                 // Sembunyikan tombol Up jika scroll di posisi navbar (atas)
+//                 if (scrollY <= navbarHeight + 10) {
+//                     btnUp.style.display = 'none';
+//                 } else {
+//                     btnUp.style.display = 'flex';
+//                 }
+//                 // Sembunyikan tombol Down jika sudah di posisi footer (bawah)
+//                 if (scrollY + window.innerHeight >= footerTop - 10) {
+//                     btnDown.style.display = 'none';
+//                 } else {
+//                      btnDown.style.display = 'flex';
+//                 }
+//         }
+
+//     window.addEventListener('scroll', checkScroll);
+//     window.addEventListener('load', checkScroll);
+
 const btnUp = document.getElementById('btnUp');
-        const btnDown = document.getElementById('btnDown');
-        const navbar = document.querySelector('nav') || document.getElementById('navbar'); // Sesuaikan selector navbar
-        const footer = document.querySelector('footer') || document.getElementById('footer'); // Sesuaikan selector footer
-            function scrollToElement(element) {
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        btnUp.addEventListener('click', () => scrollToElement(navbar));
-        btnDown.addEventListener('click', () => scrollToElement(footer));
+const navbar = document.querySelector('nav') || document.getElementById('navbar');
 
-        function checkScroll() {
-            const scrollY = window.scrollY || window.pageYOffset;
-            const navbarHeight = navbar ? navbar.offsetHeight : 0;
-            const footerTop = footer ? footer.getBoundingClientRect().top + window.scrollY : document.body.scrollHeight;
-                // Sembunyikan tombol Up jika scroll di posisi navbar (atas)
-                if (scrollY <= navbarHeight + 10) {
-                    btnUp.style.display = 'none';
-                } else {
-                    btnUp.style.display = 'flex';
-                }
-                // Sembunyikan tombol Down jika sudah di posisi footer (bawah)
-                if (scrollY + window.innerHeight >= footerTop - 10) {
-                    btnDown.style.display = 'none';
-                } else {
-                     btnDown.style.display = 'flex';
-                }
-        }
+// Fungsi scroll ke atas
+btnUp.addEventListener('click', () => {
+    if (navbar) {
+        navbar.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
 
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('load', checkScroll);
+// Cek posisi scroll
+function checkScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+    if (scrollY <= navbarHeight + 10) {
+        btnUp.classList.add('hide-btn');
+    } else {
+        btnUp.classList.remove('hide-btn');
+    }
+}
+
+// Jalankan saat scroll dan saat halaman load
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
 
 // portofolio js
 document.addEventListener('DOMContentLoaded', function() {
@@ -146,4 +174,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   obs.observe(root, { attributes: true });
+});
+
+// Animasi muncul saat scroll ke hero section
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero-section");
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          hero.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  observer.observe(hero);
 });

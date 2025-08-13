@@ -1,28 +1,63 @@
 /* =========================
-   ROOT VARIABLES
+   ROOT VARIABLES (Light & Dark)
    ========================= */
 :root {
   --primary: #ff9800;
 
-  /* Light Mode */
-  --color-light: #000;
-  --bg-light: #fff;
-  --nav-bg-light: #f8f9fa;
-  --nav-text-light: #000;
+  /* Light mode colors */
+  --color-text-light: hsl(0 0% 0%);
+  --bg-light: hsl(0 0% 90%);
+  --bg-light-med: hsl(0 0% 95%);
+  --bg-light-high: hsl(0 0% 100%);
+  --bg-light-med-transparent: transparent;
+  --nav-bg-light: var(--bg-light-med);
+  --nav-text-light: hsl(0 0% 15%);
 
-  /* Dark Mode */
-  --color-dark: #eee;
-  --bg-dark: #121212;
-  --nav-bg-dark: #212529;
-  --nav-text-dark: #eee;
+  /* Dark mode colors */
+  --color-text-dark: hsl(0 0% 95%);
+  --bg-dark: hsl(0 0% 0%);
+  --bg-dark-med: hsl(0 0% 10%);
+  --bg-dark-high: hsl(0 0% 15%);
+  --bg-dark-med-transparent: transparent;
+  --nav-bg-dark: var(--bg-dark-high);
+  --nav-text-dark: hsl(0 0% 95%);
+
+  /* Button outline secondary - Light */
+  --btn-outline-color-light: var(--color-text-light);
+  --btn-outline-border-light: hsl(0 0% 90%);
+  --btn-outline-hover-bg-light: var(--bg-light-high);
+  --btn-outline-hover-color-light: var(--color-text-light);
+
+  /* Button outline secondary - Dark */
+  --btn-outline-color-dark: var(--color-text-dark);
+  --btn-outline-border-dark: hsl(0 0% 40%);
+  --btn-outline-hover-bg-dark: var(--bg-dark-high);
+  --btn-outline-hover-color-dark: var(--color-text-dark);
+
+  /* WhatsApp button */
+  --btn-whatsapp-bg: #25D366;
+  --btn-whatsapp-color: var(--bg-light-high);
+  --btn-whatsapp-shadow: rgba(0, 0, 0, 0.3);
+  --btn-whatsapp-shadow-hover: rgba(0, 0, 0, 0.4);
+
+  /* Dropdown menu */
+  --dropdown-bg-light: var(--bg-light-high);
+  --dropdown-color-light: var(--color-text-light);
+  --dropdown-border-light: var(--bg-light);
+  --dropdown-hover-bg-light: var(--bg-light-med);
+
+  --dropdown-bg-dark: var(--bg-dark-high);
+  --dropdown-color-dark: var(--color-text-dark);
+  --dropdown-border-dark: var(--bg-dark);
+  --dropdown-hover-bg-dark: var(--bg-dark-med);
 }
 
 /* =========================
-   RESET & BASE STYLES
+   BASE & RESET
    ========================= */
 body {
   background-color: var(--bg-light);
-  color: var(--color-light);
+  color: var(--color-text-light);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -32,14 +67,108 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
+  background-color: var(--bg-light-med-transparent);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-light);
+  color: var(--color-text-light);
   margin-top: 2rem;
   transition: color 0.3s;
 }
+
+/* =========================
+   HERO SECTION BACKGROUND
+   ========================= */
+
+/* Light Mode */
+.hero-section {
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.hero-section:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Judul */
+.hero-title {
+  transition: color 0.3s ease;
+}
+.hero-section:hover .hero-title {
+  color: var(--primary, #ff9800);
+}
+
+/* Subtitle */
+.hero-subtitle {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+.hero-section:hover .hero-subtitle {
+  opacity: 1;
+}
+
+/* Tombol */
+.btn-hero {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-hero:hover {
+  background-color: var(--primary, #ff9800);
+  color: #fff;
+}
+
+/* Gambar */
+.hero-img {
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+.hero-section:hover .hero-img {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== LIGHT MODE ====== */
+body.light-mode .hero-section {
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  color: #000;
+}
+body.light-mode .hero-title {
+  color: #000;
+}
+body.light-mode .hero-subtitle {
+  color: rgba(0, 0, 0, 0.8);
+}
+body.light-mode .btn-hero {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+body.light-mode .btn-hero:hover {
+  background-color: var(--primary, #ff9800);
+  border-color: var(--primary, #ff9800);
+  color: #fff;
+}
+
+/* ====== DARK MODE ====== */
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  color: #eee;
+}
+body.dark-mode .hero-title {
+  color: #fff;
+}
+body.dark-mode .hero-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+body.dark-mode .btn-hero {
+  border-color: #ccc;
+  color: #ccc;
+}
+body.dark-mode .btn-hero:hover {
+  background-color: var(--primary, #ff9800);
+  border-color: var(--primary, #ff9800);
+  color: #000;
+}
+
 
 /* =========================
    NAVBAR
@@ -115,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 36px;
   border: none;
   background: transparent;
-  color: var(--color-light);
+  color: var(--color-text-light);
   cursor: pointer;
   padding: 0;
   transition: color 0.3s;
@@ -125,120 +254,209 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-#btnThemeToggle svg#icon-moon { display: inline; }
-#btnThemeToggle svg#icon-sun { display: none; }
+/* Default (Light Mode) → tampilkan moon, sembunyikan sun */
+#btnThemeToggle svg#icon-moon {
+  display: inline;
+}
 
-body.dark-mode #btnThemeToggle svg#icon-moon { display: none; }
-body.dark-mode #btnThemeToggle svg#icon-sun { display: inline; }
+#btnThemeToggle svg#icon-sun {
+  display: none;
+}
+
+/* Dark Mode → tampilkan sun, sembunyikan moon */
+body.dark-mode #btnThemeToggle {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode #btnThemeToggle svg#icon-moon {
+  display: none;
+}
+
+body.dark-mode #btnThemeToggle svg#icon-sun {
+  display: inline;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Light Mode */
+body.light-mode .btn-circle {
+    color: var(--btn-outline-color-light);
+    border-color: var(--btn-outline-border-light);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .btn-circle:hover {
+    background-color: var(--btn-outline-hover-bg-light);
+    color: var(--btn-outline-hover-color-light);
+}
+
+/* Dark Mode */
+body.dark-mode .btn-circle {
+    color: var(--btn-outline-color-dark);
+    border-color: var(--btn-outline-border-dark);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .btn-circle:hover {
+    background-color: var(--btn-outline-hover-bg-dark);
+    color: var(--btn-outline-hover-color-dark);
+    border-color: var(--btn-outline-hover-bg-dark);
+}
+
+
+/* Efek fade saat tombol muncul/hilang */
+.btn-circle.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Dark mode */
+body.dark-mode .btn-circle {
+  color: var(--btn-outline-color-dark);
+  border-color: var(--btn-outline-border-dark);
+}
+
+body.dark-mode .btn-circle:hover {
+  color: var(--btn-outline-hover-color-dark);
+  background-color: var(--btn-outline-hover-bg-dark);
+  border-color: var(--btn-outline-hover-bg-dark);
+}
+
 
 /* =========================
    WHATSAPP BUTTON
    ========================= */
 .btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #25D366;
-  color: white;
-  font-size: 28px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    padding: 8px 12px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-whatsapp .whatsapp-text {
+    max-width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-  transform: scale(1.2);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    padding-right: 20px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:hover .whatsapp-text {
+    max-width: 200px;
+    opacity: 1;
+}
+
+
+/* =========================
+   BUTTONS (outline-secondary)
+   ========================= */
+.btn-outline-secondary {
+  color: var(--btn-outline-color-light);
+  border-color: var(--btn-outline-border-light);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-outline-secondary:hover {
+  color: var(--btn-outline-hover-color-light);
+  background-color: var(--btn-outline-hover-bg-light);
+  border-color: var(--btn-outline-hover-bg-light);
+}
+
+/* Dark mode button overrides */
+body.dark-mode .btn-outline-secondary {
+  color: var(--btn-outline-color-dark);
+  border-color: var(--btn-outline-border-dark);
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  color: var(--btn-outline-hover-color-dark);
+  background-color: var(--btn-outline-hover-bg-dark);
+  border-color: var(--btn-outline-hover-bg-dark);
 }
 
 /* =========================
-   DARK MODE
+   DROPDOWN TOGGLE ARROW
    ========================= */
-body.dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--color-dark);
+.caret-icon {
+  margin-left: 0.35em;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-body.dark-mode .navbar {
-  background-color: var(--nav-bg-dark);
+.navbar .dropdown.show > .dropdown-toggle .caret-icon,
+.navbar .dropdown:hover > .dropdown-toggle .caret-icon {
+  transform: rotate(180deg);
 }
 
-body.dark-mode .navbar .nav-link {
-  color: var(--nav-text-dark);
+
+
+/* =========================
+   DROPDOWN MENU
+   ========================= */
+.navbar .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
-body.dark-mode .navbar .navbar-brand {
-  color: var(--nav-text-dark);
+body:not(.dark-mode) .dropdown-menu {
+  background-color: var(--dropdown-bg-light);
+  color: var(--dropdown-color-light);
+  border: 1px solid var(--dropdown-border-light);
 }
 
-body.dark-mode #logoLight { display: none; }
-body.dark-mode #logoDark { display: inline; }
-
-body.dark-mode #btnThemeToggle {
-  color: var(--color-dark);
+body:not(.dark-mode) .dropdown-menu a {
+  color: var(--dropdown-color-light);
 }
 
-body.dark-mode small,
-body.dark-mode p,
-body.dark-mode a,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-  color: var(--color-dark) !important;
+body:not(.dark-mode) .dropdown-menu a:hover {
+  background-color: var(--dropdown-hover-bg-light);
+  color: var(--dropdown-color-light);
 }
 
-body.dark-mode .text-bg-dark {
-  color: var(--color-dark) !important;
+body.dark-mode .dropdown-menu {
+  background-color: var(--dropdown-bg-dark);
+  color: var(--dropdown-color-dark);
+  border: 1px solid var(--dropdown-border-dark);
+}
+
+body.dark-mode .dropdown-menu a {
+  color: var(--dropdown-color-dark);
+}
+
+body.dark-mode .dropdown-menu a:hover {
+  background-color: var(--dropdown-hover-bg-dark);
+  color: var(--dropdown-color-dark);
 }
 
 /* =========================
-   MAIN CONTENT DARK MODE
+   PORTFOLIO FILTERS
    ========================= */
-main.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-
-main.dark-mode .container,
-main.dark-mode .card {
-  background-color: #222;
-  color: #ddd;
-}
-
-main.dark-mode .btn-outline-secondary {
-  color: #bbb;
-  border-color: #bbb;
-}
-
-main.dark-mode .btn-outline-secondary:hover {
-  color: #fff;
-  background-color: #444;
-  border-color: #444;
-}
-
-/* =========================
-   HAMBURGER ICON
-   ========================= */
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-body.dark-mode .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Pricing */
-
-.pricing-header {
-  max-width: 700px;
-}
-
-/* Portfolio Filters */
 .portfolio-filters {
   list-style: none;
   padding: 0;
@@ -254,106 +472,46 @@ body.dark-mode .navbar-toggler-icon {
   font-size: 14px;
   font-weight: 500;
   border-radius: 50px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--bg-light);
+  background-color: var(--bg-light-high);
+  color: var(--color-text-light);
   transition: all 0.3s ease;
 }
 
 .portfolio-filters li:hover,
 .portfolio-filters li.filter-active {
-  background: #0d6efd;
-  color: #fff;
-  border-color: #0d6efd;
+  background: var(--primary);
+  color: var(--bg-light-high);
+  border-color: var(--primary);
 }
 
-/* Portfolio Items */
-.portfolio .portfolio-item {
-  position: relative;
-  overflow: hidden;
+body.dark-mode .portfolio-filters li {
+  background-color: var(--bg-dark-high);
+  border: 1px solid var(--bg-dark);
+  color: var(--color-text-dark);
 }
 
-.portfolio .portfolio-item img {
-  transition: all 0.3s ease;
-}
-
-.portfolio .portfolio-item:hover img {
-  transform: scale(1.05);
-}
-
-.portfolio-info {
-  background: rgba(0,0,0,0.6);
-  padding: 15px;
-  position: absolute;
-  left: 0;
-  bottom: -100%;
-  width: 100%;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-info {
-  bottom: 0;
-}
-
-
-/* ===== DROPDOWN TOGGLE ARROW ===== */
-.caret-icon {
-  margin-left: 0.35em;
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
-/* Rotasi panah saat dropdown aktif (mobile & desktop) */
-.navbar .dropdown.show > .dropdown-toggle .caret-icon,
-.navbar .dropdown:hover > .dropdown-toggle .caret-icon {
-  transform: rotate(180deg);
+body.dark-mode .portfolio-filters li:hover,
+body.dark-mode .portfolio-filters li.filter-active {
+  background: var(--primary);
+  color: var(--bg-dark);
+  border-color: var(--primary);
 }
 
 /* =========================
-   DROPDOWN MENU
+   HAMBURGER ICON
    ========================= */
-.navbar .dropdown-toggle {
-  display: flex;
-  align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  line-height: 1.5;
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='hsl(0,0%,0%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: background-image 0.3s;
 }
 
-/* Light mode */
-body:not(.dark-mode) .dropdown-menu {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-body:not(.dark-mode) .dropdown-menu a {
-  color: #000;
-}
-
-body:not(.dark-mode) .dropdown-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #000;
-}
-
-/* Dark mode */
-body.dark-mode .dropdown-menu {
-  background-color: #212529;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-body.dark-mode .dropdown-menu a {
-  color: #fff;
-}
-
-body.dark-mode .dropdown-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='hsl(0,0%,95%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* =========================
-   DROPDOWN BEHAVIOR
+   MEDIA QUERIES
    ========================= */
 @media (min-width: 992px) {
   /* Desktop: dropdown muncul saat hover */
@@ -363,14 +521,16 @@ body.dark-mode .dropdown-menu a:hover {
   }
 }
 
-/* Mobile: rotasi saat dropdown dibuka */
 @media (max-width: 720px) {
+  /* Mobile: rotasi panah saat dropdown dibuka */
   .navbar .dropdown.show > .dropdown-toggle .caret-icon {
     transform: rotate(180deg);
   }
 }
 
-/* Animasi kemunculan dropdown */
+/* =========================
+   ANIMATIONS
+   ========================= */
 .dropdown-menu {
   animation: dropdownFade 0.2s ease;
 }
@@ -384,4 +544,56 @@ body.dark-mode .dropdown-menu a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* =========================
+   DARK MODE OVERRIDES
+   ========================= */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .container {
+  background-color: var(--bg-dark-med-transparent);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--nav-bg-dark);
+}
+
+body.dark-mode .navbar .nav-link {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode .navbar .navbar-brand {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode #logoLight {
+  display: none;
+}
+
+body.dark-mode #logoDark {
+  display: inline;
+}
+
+body.dark-mode #btnThemeToggle {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode small,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode .text-bg-dark {
+  color: var(--color-text-dark) !important;
 }
