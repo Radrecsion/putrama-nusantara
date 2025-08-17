@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prabatama - Jasa Konsultan-Kontruksi</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+            crossorigin="anonymous">
+            <meta name="theme-color" content="#712cf9">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+  
+</head>
+<body>
+    <!-- SVG symbols for icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol
+      id="moon-stars-fill"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+      />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+      />
+    </symbol>
+
+    <symbol id="sun-fill" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zm-9.193-9.193a.5.5 0 0 1-.707 0L2.05 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"
+      />
+    </symbol>
+  </svg>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <div class="logo-crop">
+          <a href="index.html">
+            <img src="logo-light.png"
+            alt="logo-pratma-light-mode"
+            class="logo-img"
+            id="logo"/>
+          </a>
+        </div>
+
+        <button id="btnThemeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode" type="button">
+          <svg id="icon-moon" class="bi" width="24" height="24" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <use xlink:href="#moon-stars-fill"></use>
+          </svg>
+          <svg id="icon-sun" class="bi" width="24" height="24" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <use xlink:href="#sun-fill"></use>
+          </svg>
+        </button>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+
+            <!-- Service Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdown" 
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Service
+                <span class="caret-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" 
+                      fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M7.247 11.14 2.451 5.658C1.885 5.013 
+                        2.345 4 3.204 4h9.592a1 1 0 0 1 .753 
+                        1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                  </svg>
+                </span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="service.html">Pelayanan</a></li>
+                <li><a class="dropdown-item" href="service.html">Estimasi Biaya</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </nav>
+
+    <main>
+      <!-- HERO SECTION -->
+      <div class="container my-5">
+        <div class="row hero-section p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg overflow-hidden">
+
+          
+
+          <!-- Kolom kiri -->
+          <div class="col-lg-7 p-4 p-lg-5">
+            <!-- Tagline kecil di atas header (inline, bukan absolute) -->
+          <div class="col-12 mb-2">
+            <span class="badge bg-primary text-uppercase fw-bold px-3 py-2">
+              Rancang, Bangun, Wujudkan
+            </span>
+          </div>
+            <h1 class="display-2 hero-title mb-3">
+              rancang <b>bangun</b> rumah
+            </h1>
+            <h5 class="fw-normal mb-4 hero-subtitle">
+              <b>Prabatama</b> hadir untuk mendampingi setiap klien melalui layanan
+              perencanaan matang, pelaksanaan terukur, dan pemantauan menyeluruh
+              demi menjamin hasil konstruksi yang optimal
+            </h5>
+            <div class="d-flex gap-3 justify-content-start lead fw-bold hero-btn-wrapper">
+              <a class="btn btn-outline-primary hero-btn" href="https://wa.me/6285334058103?text=Saya%20mau%20bertanya,%20">
+                Hubungi
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom kanan -->
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden hero-image-wrapper position-relative">
+            <div class="pt-3 px-3 pt-md-0 text-end overflow-hidden">
+              <div class="my-3 p-3 position-relative">
+                <img
+                  src="assets/img/bld1.png"
+                  class="img-fluid rounded float-end hero-image shadow-lg"
+                  alt="Desain rumah modern oleh Prabatama, layanan rancang bangun profesional"
+                  width="800"
+                  height="800"
+                  style="max-width: 100%; transition: transform 0.4s ease;"
+                />
+                <div class="position-absolute top-0 start-0 w-100 h-100 rounded" 
+                    style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.05)); pointer-events: none;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+      <!-- Layanan Unggulan -->
+<section class="container my-5 fade-up-section" id="our-services">
+  <div class="row align-items-center g-4">
+    
+    <!-- Kanan (desktop) / Atas (mobile): Header -->
+    <div class="col-md-4 d-flex flex-column justify-content-center text-start order-1 order-md-2">
+      <h2 class="mb-4">Layanan Unggulan Kami</h2>
+      <p class="text-muted">
+        Kami menghadirkan layanan lengkap mulai dari desain, perencanaan, manajemen proyek, 
+        hingga pelaksanaan konstruksi dengan standar kualitas tinggi.
+      </p>
+      <!-- Tombol -->
+      <a href="pelayanan.html" class="btn btn-outline-primary px-4 py-2 rounded-pill">
+        Lihat Semua Layanan
+      </a>
+    </div>
+
+    <!-- Kiri (desktop) / Bawah (mobile): Card -->
+    <div class="col-md-8 order-2 order-md-1">
+      <div class="row g-4">
+        <div class="col-md-6 text-center">
+          <div class="services-card p-3 h-100">
+            <i class="bi bi-pencil-square display-4 mb-3"></i>
+            <h5>Desain & Perencanaan</h5>
+            <p>Menyediakan desain rumah modern dan perencanaan konstruksi yang matang sesuai kebutuhan klien.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <div class="services-card p-3 h-100">
+            <i class="bi bi-gear-fill display-4 mb-3"></i>
+            <h5>Manajemen Proyek</h5>
+            <p>Memastikan setiap proyek berjalan sesuai jadwal, budget, dan standar kualitas tinggi.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <div class="services-card p-3 h-100">
+            <i class="bi bi-buildings display-4 mb-3"></i>
+            <h5>Konstruksi & Pelaksanaan</h5>
+            <p>Pelaksanaan konstruksi profesional dengan tenaga ahli berpengalaman di berbagai jenis bangunan.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <div class="services-card p-3 h-100">
+            <i class="bi bi-eyeglasses display-4 mb-3"></i>
+            <h5>Pemantauan & Quality Control</h5>
+            <p>Kontrol kualitas dan pemantauan menyeluruh untuk memastikan hasil akhir optimal dan aman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <!-- =======================
+     WHY CHOOSE US SECTION (Header kiri, Card kanan, text-left pada card)
+     ======================= -->
+<section class="container my-5 fade-up-section section-bg" id="why-choose-us">
+  <div class="row align-items-center">
+    <!-- Header kiri -->
+    <div class="col-md-5 mb-4 mb-md-0">
+      <h2>Kenapa Memilih Kami?</h2>
+      <p>
+        Setiap proyek yang kami tangani adalah cerminan komitmen kami terhadap kualitas dan kepercayaan. 
+        Tim ahli kami mendampingi Anda dari perencanaan hingga penyelesaian, memastikan setiap tahap berjalan lancar, tepat waktu, dan transparan. 
+        Kami bukan hanya membangun bangunan, tetapi juga membangun kepuasan dan kepercayaan klien.
+      </p>
+    </div>
+
+    <!-- Cards kanan -->
+    <div class="col-md-7">
+      <div class="row g-3">
+        <div class="col-6 col-lg-6">
+          <div class="fade-up-card text-left-why h-100 p-3 shadow">
+            <i class="bi bi-award display-3 mb-2"></i>
+            <h5 class="mb-1">Profesional & Berpengalaman</h5>
+            <p>Tim ahli berpengalaman bertahun-tahun di bidang konstruksi.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <div class="fade-up-card text-left-why h-100 p-3 shadow">
+            <i class="bi bi-shield-check display-3 mb-2"></i>
+            <h5 class="mb-1">Kualitas Terjamin</h5>
+            <p>Proyek dijalankan dengan standar kualitas tinggi.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <div class="fade-up-card text-left-why h-100 p-3 shadow">
+            <i class="bi bi-clock display-3 mb-2"></i>
+            <h5 class="mb-1">Tepat Waktu</h5>
+            <p>Pekerjaan selesai sesuai jadwal proyek.</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6">
+          <div class="fade-up-card text-left-why h-100 p-3 shadow">
+            <i class="bi bi-people-fill display-3 mb-2"></i>
+            <h5 class="mb-1">Layanan Personal & Transparan</h5>
+            <p>Mendampingi klien dengan komunikasi terbuka.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- =======================
+     PORTOFOLIO CAROUSEL RESPONSIVE
+     ======================= -->
+<section class="container my-5 fade-up-section section-bg" id="portfolio-projects">
+  <h2 class="text-center mb-4">Portofolio Proyek</h2>
+
+  <!-- Carousel -->
+    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="project.html#portfolio">
+        <img src="assets/img/portfolio/bangun1.jpg" class="d-block w-100" alt="Bangun 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-1">Bangun 1</h5>
+          <p>Rumah Dedy</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="project.html#portfolio">
+        <img src="assets/img/portfolio/renov1.jpg" class="d-block w-100" alt="Renov 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="mb-1">Renov 1</h5>
+          <p>Renov Rumah Dedy</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+</div>
+
+  <!-- Tombol Lihat Semua -->
+  <div class="text-center mt-4">
+    <a href="/portofolio.html" class="btn btn-outline-secondary">Lihat Semua Proyek</a>
+  </div>
+</section>
+
+
+
+</main>
+
+
+
+  <footer id="footer" class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <div class="logo-crop">
+          <a href="index.html">
+            <img src="logo-light.png"
+                alt="logo-pratma-light-mode"
+                class="logo-img footer-logo"
+                id="footerLogoLight"/>
+            <img src="logo-dark.png"
+                alt="logo-pratma-dark-mode"
+                class="logo-img footer-logo"
+                id="footerLogoDark"/>
+          </a>
+        </div>
+        <small class="d-block mb-3 text-body-secondary">&copy; 2017–2025</small>
+      </div>
+      <div class="col-6 col-md">
+        <ul class="list-unstyled text-small"></ul>
+      </div>
+      <div class="col-6 col-md">
+        <ul class="list-unstyled text-small"></ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Social</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">facebook</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">instagram</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Tombol Scroll Up (letakkan langsung di body, setelah footer misalnya) -->
+  <button id="btnUp" class="btn btn-circle position-fixed" 
+          style="bottom: 30px; right: 30px; z-index: 2147483647;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+          fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 
+              3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 
+              0l-4 4a.5.5 0 1 0 .708.708L7.5 
+              2.707V14.5a.5.5 0 0 0 .5.5"/>
+      </svg>
+  </button>
+
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- main js -->
+  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

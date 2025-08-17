@@ -1,0 +1,895 @@
+/* =========================
+   ROOT VARIABLES (Light & Dark)
+   ========================= */
+:root {
+  --primary: #ff9800;
+
+  /* Light mode colors */
+  --color-text-light: hsl(0 0% 0%);
+  --bg-light: hsl(0 0% 90%);
+  --bg-light-med: hsl(0 0% 95%);
+  --bg-light-high: hsl(0 0% 100%);
+  --bg-light-med-transparent: transparent;
+  --nav-bg-light: var(--bg-light-med);
+  --nav-text-light: hsl(0 0% 15%);
+
+  /* Dark mode colors */
+  --color-text-dark: hsl(0 0% 95%);
+  --bg-dark: hsl(0 0% 0%);
+  --bg-dark-med: hsl(0 0% 10%);
+  --bg-dark-high: hsl(0 0% 15%);
+  --bg-dark-med-transparent: transparent;
+  --nav-bg-dark: var(--bg-dark-high);
+  --nav-text-dark: hsl(0 0% 95%);
+
+  /* Button outline secondary - Light */
+  --btn-outline-color-light: var(--color-text-light);
+  --btn-outline-border-light: hsl(0 0% 90%);
+  --btn-outline-hover-bg-light: var(--bg-light-high);
+  --btn-outline-hover-color-light: var(--color-text-light);
+
+  /* Button outline secondary - Dark */
+  --btn-outline-color-dark: var(--color-text-dark);
+  --btn-outline-border-dark: hsl(0 0% 40%);
+  --btn-outline-hover-bg-dark: var(--bg-dark-high);
+  --btn-outline-hover-color-dark: var(--color-text-dark);
+
+  /* WhatsApp button */
+  --btn-whatsapp-bg: #25D366;
+  --btn-whatsapp-color: var(--bg-light-high);
+  --btn-whatsapp-shadow: rgba(0, 0, 0, 0.3);
+  --btn-whatsapp-shadow-hover: rgba(0, 0, 0, 0.4);
+
+  /* Dropdown menu */
+  --dropdown-bg-light: var(--bg-light-high);
+  --dropdown-color-light: var(--color-text-light);
+  --dropdown-border-light: var(--bg-light);
+  --dropdown-hover-bg-light: var(--bg-light-med);
+
+  --dropdown-bg-dark: var(--bg-dark-high);
+  --dropdown-color-dark: var(--color-text-dark);
+  --dropdown-border-dark: var(--bg-dark);
+  --dropdown-hover-bg-dark: var(--bg-dark-med);
+}
+
+/* =========================
+   BASE & RESET
+   ========================= */
+body {
+  background-color: var(--bg-light);
+  color: var(--color-text-light);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background-color: var(--bg-light-med-transparent);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-light);
+  margin-top: 2rem;
+  transition: color 0.3s;
+}
+
+/* =========================
+   HERO SECTION FADE-UP
+   ========================= */
+
+/* Container fade-in saja */
+.hero-section {
+  overflow: hidden;
+  opacity: 0;
+  animation: heroSectionFade 800ms ease-out forwards;
+}
+
+@keyframes heroSectionFade {
+  to { opacity: 1; }
+}
+
+/* Semua anak mulai transparan & agak turun */
+.hero-title,
+.hero-subtitle,
+.hero-btn-wrapper,
+.hero-image {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Urutan masuk */
+.hero-title {
+  animation: fadeUpIn 700ms ease-out 0.2s forwards;
+}
+.hero-subtitle {
+  animation: fadeUpIn 700ms ease-out 0.4s forwards;
+}
+.hero-btn-wrapper {
+  animation: fadeUpIn 700ms ease-out 0.6s forwards;
+}
+.hero-image {
+  animation: fadeUpIn 700ms ease-out 0.8s forwards;
+}
+
+/* Keyframes: naik dan fade */
+@keyframes fadeUpIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects (tidak konflik dengan animasi) */
+.hero-section {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.hero-title {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.hero-section:hover .hero-title {
+  color: var(--primary, #ff9800);
+  transform: translateX(5px);
+}
+.hero-subtitle {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hero-section:hover .hero-subtitle {
+  transform: translateY(-5px);
+  opacity: 0.95;
+}
+.hero-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* =========================
+   HERO BUTTON HOVER TERANGKAT
+   ========================= */
+
+/* Default style tombol */
+.hero-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover hanya pada tombol */
+.hero-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section,
+  .hero-title,
+  .hero-subtitle,
+  /* .hero-btn-wrapper, */
+  .hero-image {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+/* ====== LIGHT MODE ====== */
+body.light-mode .hero-section {
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  color: #000;
+}
+body.light-mode .hero-title {
+  color: #000;
+}
+body.light-mode .hero-subtitle {
+  color: rgba(0, 0, 0, 0.8);
+}
+body.light-mode .btn-hero {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+body.light-mode .btn-hero:hover {
+  background-color: var(--primary, #ff9800);
+  border-color: var(--primary, #ff9800);
+  color: #fff;
+}
+
+/* ====== DARK MODE ====== */
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+  color: #eee;
+}
+body.dark-mode .hero-title {
+  color: #fff;
+}
+body.dark-mode .hero-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+body.dark-mode .btn-hero {
+  border-color: #ccc;
+  color: #ccc;
+}
+body.dark-mode .btn-hero:hover {
+  background-color: var(--primary, #ff9800);
+  border-color: var(--primary, #ff9800);
+  color: #000;
+}
+
+.section-bg {
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  /* Default background untuk light mode */
+  background: var(--bg-light-med);
+}
+
+/* Dark mode background */
+body.dark-mode .section-bg {
+  background: var(--bg-dark-high);
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+  background-color: var(--nav-bg-light);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--nav-text-light);
+  transition: color 0.3s;
+}
+
+.navbar .nav-link {
+  color: var(--nav-text-light);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+  position: absolute;
+  width: 100%;
+  bottom: -4px;
+  left: 0;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ==== Navbar Logo ==== */
+.logo-crop img#logo {
+  height: default; /* ukuran default desktop */
+  transition: height 0.3s ease;
+}
+
+/* Perbesar di tampilan mobile */
+@media (max-width: 768px) {
+  .logo-crop img#logo {
+    height: 40px; /* lebih besar di mobile */
+  }
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+#logoLight {
+  display: inline;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+#logoDark {
+  display: none;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+.logo-img {
+  width: clamp(80px, 15vw, 250px);
+  height: auto;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+   ========================= */
+#btnThemeToggle {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+#btnThemeToggle svg {
+  display: block;
+}
+
+/* Default (Light Mode) → tampilkan moon, sembunyikan sun */
+#btnThemeToggle svg#icon-moon {
+  display: inline;
+}
+
+#btnThemeToggle svg#icon-sun {
+  display: none;
+}
+
+/* =========================
+   BUTTON SCROLL UP
+   ========================= */
+
+#btnUp {
+  z-index: 2147483647 !important; /* pastikan di atas semua */
+}
+
+
+/* Dark Mode → tampilkan sun, sembunyikan moon */
+body.dark-mode #btnThemeToggle {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode #btnThemeToggle svg#icon-moon {
+  display: none;
+}
+
+body.dark-mode #btnThemeToggle svg#icon-sun {
+  display: inline;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Light Mode */
+body.light-mode .btn-circle {
+    color: var(--btn-outline-color-light);
+    border-color: var(--btn-outline-border-light);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .btn-circle:hover {
+    background-color: var(--btn-outline-hover-bg-light);
+    color: var(--btn-outline-hover-color-light);
+}
+
+/* Dark Mode */
+body.dark-mode .btn-circle {
+    color: var(--btn-outline-color-dark);
+    border-color: var(--btn-outline-border-dark);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .btn-circle:hover {
+    background-color: var(--btn-outline-hover-bg-dark);
+    color: var(--btn-outline-hover-color-dark);
+    border-color: var(--btn-outline-hover-bg-dark);
+}
+
+
+/* Efek fade saat tombol muncul/hilang */
+.btn-circle.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Dark mode */
+body.dark-mode .btn-circle {
+  color: var(--btn-outline-color-dark);
+  border-color: var(--btn-outline-border-dark);
+}
+
+body.dark-mode .btn-circle:hover {
+  color: var(--btn-outline-hover-color-dark);
+  background-color: var(--btn-outline-hover-bg-dark);
+  border-color: var(--btn-outline-hover-bg-dark);
+}
+
+/* ===== FADE-UP SECTIONS & CARDS ===== */
+.fade-up-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fade-up-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards di dalam section */
+.fade-up-card,
+.services-card {
+  background-color: var(--bg-light-high);
+  color: var(--color-text-light);
+  border: 1px solid var(--bg-light-med);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.4s ease, opacity 0.4s ease,
+              box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: default;
+  padding: 2rem 1rem;
+}
+
+/* Animasi muncul tiap card */
+.fade-up-card.animate,
+.services-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.fade-up-card:hover,
+.services-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.fade-up-card:hover i,
+.services-card:hover i {
+  transform: scale(1.2);
+  color: var(--primary);
+}
+
+/* Dark Mode */
+body.dark-mode .fade-up-card,
+body.dark-mode .services-card {
+  background-color: var(--bg-dark-med);
+  color: var(--color-text-dark);
+  border: 1px solid var(--bg-dark);
+}
+body.dark-mode .fade-up-card:hover,
+body.dark-mode .services-card:hover {
+  box-shadow: 0 12px 30px rgba(255,255,255,0.1);
+}
+body.dark-mode .fade-up-card i,
+body.dark-mode .services-card i {
+  color: var(--color-text-dark);
+}
+
+#why-choose-us .fade-up-card.text-left-why {
+  text-align: left;
+}
+
+/* <!-- =======================
+     CSS DARK/LIGHT MODE CARD PORTOFOLIO
+     ======================= --> */
+
+/* Default: Light Mode */
+#portfolio-projects .portfolio-card {
+  background-color: var(--bg-light-high);
+  color: var(--color-text-light);
+  border: 1px solid var(--bg-light-med);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover efek */
+#portfolio-projects .portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode */
+body.dark-mode #portfolio-projects .portfolio-card {
+  background-color: var(--bg-dark-med);
+  color: var(--color-text-dark);
+  border: 1px solid var(--bg-dark);
+}
+
+body.dark-mode #portfolio-projects .portfolio-card:hover {
+  box-shadow: 0 12px 30px rgba(255,255,255,0.1);
+}
+
+ /* CSS CAROUSEL ARROWS CONTAINER */
+/* Container overlay untuk panah */
+#portfolio-projects .carousel-control-prev,
+#portfolio-projects .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+/* Icon panah */
+#portfolio-projects .carousel-control-prev-icon,
+#portfolio-projects .carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* default agak transparan */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Hover: icon lebih jelas */
+#portfolio-projects .carousel-control-prev:hover .carousel-control-prev-icon,
+#portfolio-projects .carousel-control-next:hover .carousel-control-next-icon {
+    opacity: 1; /* terlihat jelas */
+    transform: scale(1.1);
+}
+
+/* Arrow colors per mode - Light */
+body.light-mode #portfolio-projects .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11 1L5 8l6 7' stroke='%23000' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+body.light-mode #portfolio-projects .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l6 7-6 7' stroke='%23000' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Arrow colors per mode - Dark */
+body.dark-mode #portfolio-projects .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M11 1L5 8l6 7' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+body.dark-mode #portfolio-projects .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M5 1l6 7-6 7' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Hover container background semi-transparent untuk menonjolkan panah */
+#portfolio-projects .carousel-control-prev:hover,
+#portfolio-projects .carousel-control-next:hover {
+    background-color: rgba(0,0,0,0.1); /* Light mode akan override */
+}
+
+body.light-mode #portfolio-projects .carousel-control-prev:hover,
+body.light-mode #portfolio-projects .carousel-control-next:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+body.dark-mode #portfolio-projects .carousel-control-prev:hover,
+body.dark-mode #portfolio-projects .carousel-control-next:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Card text rata kiri tetap */
+#portfolio-projects .portfolio-card .card-body {
+  text-align: left;
+}
+
+#portfolioCarousel .carousel-item img {
+  height: 400px;         /* tinggi seragam */
+  object-fit: cover;     /* crop biar rapi tanpa distorsi */
+  width: 100%;           /* penuh lebar */
+  border-radius: 8px;    /* opsional, biar sudutnya rapi */
+}
+
+@media (max-width: 768px) {
+  #portfolioCarousel .carousel-item img {
+    height: 250px;   /* lebih kecil di mobile */
+  }
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+   ========================= */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    padding: 8px 12px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-whatsapp .whatsapp-text {
+    max-width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    padding-right: 20px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:hover .whatsapp-text {
+    max-width: 200px;
+    opacity: 1;
+}
+
+
+/* =========================
+   BUTTONS (outline-secondary)
+   ========================= */
+.btn-outline-secondary {
+  color: var(--btn-outline-color-light);
+  border-color: var(--btn-outline-border-light);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-outline-secondary:hover {
+  color: var(--btn-outline-hover-color-light);
+  background-color: var(--btn-outline-hover-bg-light);
+  border-color: var(--btn-outline-hover-bg-light);
+}
+
+/* Dark mode button overrides */
+body.dark-mode .btn-outline-secondary {
+  color: var(--btn-outline-color-dark);
+  border-color: var(--btn-outline-border-dark);
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  color: var(--btn-outline-hover-color-dark);
+  background-color: var(--btn-outline-hover-bg-dark);
+  border-color: var(--btn-outline-hover-bg-dark);
+}
+
+/* =========================
+   DROPDOWN TOGGLE ARROW
+   ========================= */
+.caret-icon {
+  margin-left: 0.35em;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar .dropdown.show > .dropdown-toggle .caret-icon,
+.navbar .dropdown:hover > .dropdown-toggle .caret-icon {
+  transform: rotate(180deg);
+}
+
+
+
+/* =========================
+   DROPDOWN MENU
+   ========================= */
+.navbar .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+body:not(.dark-mode) .dropdown-menu {
+  background-color: var(--dropdown-bg-light);
+  color: var(--dropdown-color-light);
+  border: 1px solid var(--dropdown-border-light);
+}
+
+body:not(.dark-mode) .dropdown-menu a {
+  color: var(--dropdown-color-light);
+}
+
+body:not(.dark-mode) .dropdown-menu a:hover {
+  background-color: var(--dropdown-hover-bg-light);
+  color: var(--dropdown-color-light);
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: var(--dropdown-bg-dark);
+  color: var(--dropdown-color-dark);
+  border: 1px solid var(--dropdown-border-dark);
+}
+
+body.dark-mode .dropdown-menu a {
+  color: var(--dropdown-color-dark);
+}
+
+body.dark-mode .dropdown-menu a:hover {
+  background-color: var(--dropdown-hover-bg-dark);
+  color: var(--dropdown-color-dark);
+}
+
+/* =========================
+   PORTFOLIO FILTERS
+   ========================= */
+.portfolio-filters {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.portfolio-filters li {
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 1px solid var(--bg-light);
+  background-color: var(--bg-light-high);
+  color: var(--color-text-light);
+  transition: all 0.3s ease;
+}
+
+.portfolio-filters li:hover,
+.portfolio-filters li.filter-active {
+  background: var(--primary);
+  color: var(--bg-light-high);
+  border-color: var(--primary);
+}
+
+body.dark-mode .portfolio-filters li {
+  background-color: var(--bg-dark-high);
+  border: 1px solid var(--bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .portfolio-filters li:hover,
+body.dark-mode .portfolio-filters li.filter-active {
+  background: var(--primary);
+  color: var(--bg-dark);
+  border-color: var(--primary);
+}
+
+/* =========================
+   HAMBURGER ICON
+   ========================= */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='hsl(0,0%,0%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: background-image 0.3s;
+}
+
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='hsl(0,0%,95%)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 992px) {
+  /* Desktop: dropdown muncul saat hover */
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  /* Mobile: rotasi panah saat dropdown dibuka */
+  .navbar .dropdown.show > .dropdown-toggle .caret-icon {
+    transform: rotate(180deg);
+  }
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+.dropdown-menu {
+  animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   DARK MODE OVERRIDES
+   ========================= */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .container {
+  background-color: var(--bg-dark-med-transparent);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--nav-bg-dark);
+}
+
+body.dark-mode .navbar .nav-link {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode .navbar .navbar-brand {
+  color: var(--nav-text-dark);
+}
+
+body.dark-mode #logoLight {
+  display: none;
+}
+
+body.dark-mode #logoDark {
+  display: inline;
+}
+
+body.dark-mode #btnThemeToggle {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode small,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--color-text-dark) !important;
+}
+
+body.dark-mode .text-bg-dark {
+  color: var(--color-text-dark) !important;
+}
+
+/* Footer logo default */
+#footer .footer-logo {
+  height: 38px; /* atau 2em kalau mau relatif */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  transition: opacity 0.3s;
+}
+
+/* Default (Light Mode) → tampilkan logo light */
+#footer #footerLogoLight {
+  display: inline;
+}
+#footer #footerLogoDark {
+  display: none;
+}
+
+/* Dark Mode → tampilkan logo dark */
+body.dark-mode #footer #footerLogoLight {
+  display: none;
+}
+body.dark-mode #footer #footerLogoDark {
+  display: inline;
+}
+
