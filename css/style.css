@@ -4,6 +4,10 @@
 :root {
   --primary: #ff9800;
 
+  /* Social brand colors */
+  --facebook-color: #1877f2;
+  --instagram-color: #e1306c;
+
   /* Light mode colors */
   --color-text-light: hsl(0 0% 0%);
   --bg-light: hsl(0 0% 90%);
@@ -885,6 +889,8 @@ body.dark-mode .text-bg-dark {
   display: none;
 }
 
+
+
 /* Dark Mode → tampilkan logo dark */
 body.dark-mode #footer #footerLogoLight {
   display: none;
@@ -892,6 +898,19 @@ body.dark-mode #footer #footerLogoLight {
 body.dark-mode #footer #footerLogoDark {
   display: inline;
 }
+
+.social-link i {
+  transition: color 0.3s ease;
+}
+
+.social-link:hover i.fa-facebook {
+  color: var(--facebook-color);
+}
+
+.social-link:hover i.fa-instagram {
+  color: var(--instagram-color);
+}
+
 
 .team-photo {
   width: 140px;         /* ukuran default */
