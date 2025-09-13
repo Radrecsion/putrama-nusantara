@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .hero-section:hover .hero-title {
-  color: var(--primary, #ff9800);
+  color: var(--primary, hsl(250, 100%, 50%));
   transform: translateX(5px);
 }
 .hero-subtitle {
@@ -281,6 +281,20 @@ body.dark-mode .section-bg {
   transform: scaleX(1);
 }
 
+/* ==== Navbar Logo ==== */
+.logo-crop img#logo {
+  height: default; /* ukuran default desktop */
+  transition: height 0.3s ease;
+}
+
+/* Perbesar di tampilan mobile */
+@media (max-width: 768px) {
+  .logo-crop img#logo {
+    height: 40px; /* lebih besar di mobile */
+  }
+}
+
+
 /* =========================
    LOGO
    ========================= */
@@ -328,6 +342,15 @@ body.dark-mode .section-bg {
 #btnThemeToggle svg#icon-sun {
   display: none;
 }
+
+/* =========================
+   BUTTON SCROLL UP
+   ========================= */
+
+#btnUp {
+  z-index: 2147483647 !important; /* pastikan di atas semua */
+}
+
 
 /* Dark Mode → tampilkan sun, sembunyikan moon */
 body.dark-mode #btnThemeToggle {
@@ -565,6 +588,20 @@ body.dark-mode #portfolio-projects .carousel-control-next:hover {
 #portfolio-projects .portfolio-card .card-body {
   text-align: left;
 }
+
+#portfolioCarousel .carousel-item img {
+  height: 400px;         /* tinggi seragam */
+  object-fit: cover;     /* crop biar rapi tanpa distorsi */
+  width: 100%;           /* penuh lebar */
+  border-radius: 8px;    /* opsional, biar sudutnya rapi */
+}
+
+@media (max-width: 768px) {
+  #portfolioCarousel .carousel-item img {
+    height: 250px;   /* lebih kecil di mobile */
+  }
+}
+
 
 /* =========================
    WHATSAPP BUTTON
@@ -831,10 +868,88 @@ body.dark-mode .text-bg-dark {
   color: var(--color-text-dark) !important;
 }
 
-/* Footer logo */
-#footer .logo-img {
-  height: 1.2em; /* Sesuaikan dengan tinggi teks kecil di footer */
-  width: auto;   /* Agar proporsional */
+/* Footer logo default */
+#footer .footer-logo {
+  height: 38px; /* atau 2em kalau mau relatif */
+  width: auto;
   display: inline-block;
-  vertical-align: middle; /* Agar sejajar dengan teks */
+  vertical-align: middle;
+  transition: opacity 0.3s;
+}
+
+/* Default (Light Mode) → tampilkan logo light */
+#footer #footerLogoLight {
+  display: inline;
+}
+#footer #footerLogoDark {
+  display: none;
+}
+
+/* Dark Mode → tampilkan logo dark */
+body.dark-mode #footer #footerLogoLight {
+  display: none;
+}
+body.dark-mode #footer #footerLogoDark {
+  display: inline;
+}
+
+.team-photo {
+  width: 140px;         /* ukuran default */
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-profile:hover .team-photo {
+  transform: scale(1.07);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-profile h5 {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.team-profile p {
+  font-size: 0.95rem;
+}
+
+/* biar responsif */
+@media (min-width: 768px) {
+  .team-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.team-photo-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;        /* biar pas di-zoom tetap bulat */
+  margin: 0 auto;          /* center */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* efek hover */
+.team-profile:hover .team-photo-wrapper img {
+  transform: scale(1.1);
+}
+
+.team-profile:hover .team-photo-wrapper {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
