@@ -45,7 +45,7 @@
                 <!-- Tombol WhatsApp -->
 
                     <div class="nav-item ms-3">
-                        <a href="https://wa.me/6285334058103?text=Saya%20mau%20bertanya,%20" 
+                        <a href="https://wa.me/6289510182506?text=Saya%20mau%20bertanya,%20" 
                             target="_blank" 
                             class="btn-whatsapp"
                             title="Chat via WhatsApp">
@@ -172,53 +172,99 @@
                         </div>
                     </div>
                 
-                <section id="portfolio" class="portfolio section">
-                    <div class="container">
-                        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                        <ul class="portfolio-filters isotope-filters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-bangun">Bangun</li>
-                            <li data-filter=".filter-renov">Renov</li>
-                        </ul>
-                        <div class="row gy-4 isotope-container">
-                            <!-- Filter: App -->
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
-                                <img src="assets/img/portfolio/bangun1.png" class="img-fluid" alt="rumah">
-                                <div class="portfolio-info">
-                                <h4>Bangun 1</h4>
-                                <p>Rumah Dedy</p>
-                                </div>
-                            </div>
+            <section id="portfolio" class="portfolio section">
+            <div class="container">
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <!-- FILTER -->
+                <ul class="portfolio-filters isotope-filters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-bangun">Bangun</li>
+                    <li data-filter=".filter-renov">Renov</li>
+                </ul>
 
-                            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
-                                <img src="assets/img/portfolio/bangun2.jpg" class="img-fluid" alt="kos-kosan">
-                                <div class="portfolio-info">
-                                <h4>Bangun 2</h4>
-                                <p>Rumah adit</p>
-                                </div>
-                            </div> -->
-
-                            <!-- Filter: Card -->
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
-                                <img src="assets/img/portfolio/renov1.png" class="img-fluid" alt="renov rumah">
-                                <div class="portfolio-info">
-                                <h4>Renov 1</h4>
-                                <p>renovasi rumah 2 lantai</p>
-                                </div>
-                            </div>
-
-                            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
-                                <img src="assets/img/portfolio/renov2.jpg" class="img-fluid" alt="renov rumah">
-                                <div class="portfolio-info">
-                                <h4>Renov 2</h4>
-                                <p>renov rumah dedy</p>
-                                </div>
-                            </div> -->
+                <!-- GRID -->
+                <div class="row gy-4 isotope-container">
+                    <!-- ITEM: Bangun 1 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+                    <a href="#"
+                        class="d-block text-reset text-decoration-none portfolio-trigger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#portfolioModal"
+                        data-title="Bangun 1 — Rumah Dedy"
+                        data-content="#modal-content-bangun-1"
+                        data-link="project-detail.html?slug=bangun-1"
+                        aria-label="Buka detail Bangun 1">
+                        <img src="assets/img/portfolio/bangun1.png"
+                            class="img-fluid"
+                            alt="Bangun 1 - Rumah Dedy"
+                            loading="lazy">
+                        <div class="portfolio-info">
+                        <h4 class="mb-1">Bangun 1</h4>
+                        <p class="mb-0">Rumah Dedy</p>
                         </div>
-
-                        </div>
+                    </a>
                     </div>
-                    </section>
+
+                    <!-- ITEM: Renov 1 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+                    <a href="#"
+                        class="d-block text-reset text-decoration-none portfolio-trigger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#portfolioModal"
+                        data-title="Renov 1 — Rumah 2 Lantai"
+                        data-content="#modal-content-renov-1"
+                        data-link="project-detail.html?slug=renov-1"
+                        aria-label="Buka detail Renov 1">
+                        <img src="assets/img/portfolio/renov1.png"
+                            class="img-fluid"
+                            alt="Renov 1 - Renovasi rumah 2 lantai"
+                            loading="lazy">
+                        <div class="portfolio-info">
+                        <h4 class="mb-1">Renov 1</h4>
+                        <p class="mb-0">Renovasi rumah 2 lantai</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <!-- Tambahkan item lain dengan pola yang sama -->
+                </div><!-- /.isotope-container -->
+                </div><!-- /.isotope-layout -->
+            </div><!-- /.container -->
+
+            <!-- PAYLOAD TERSEMBUNYI UNTUK MODAL -->
+            <div class="d-none">
+                <!-- Bangun 1 -->
+                <div id="modal-content-bangun-1">
+                <img src="assets/img/portfolio/bangun1.png" class="img-fluid rounded mb-3" alt="Bangun 1 - Rumah Dedy">
+                <p class="mb-3 small text-body-secondary">
+                    Pembangunan rumah tinggal 2 lantai. Fokus pada struktur &amp; finishing dengan pengawasan harian.
+                </p>
+                <dl class="row small mb-0">
+                    <dt class="col-4">Lokasi</dt><dd class="col-8">Sleman, Yogyakarta</dd>
+                    <dt class="col-4">Tahun</dt><dd class="col-8">2024</dd>
+                    <dt class="col-4">Luas</dt><dd class="col-8">±120 m²</dd>
+                    <dt class="col-4">Scope</dt><dd class="col-8">Struktur, arsitektur, finishing</dd>
+                    <dt class="col-4">Status</dt><dd class="col-8">Selesai</dd>
+                </dl>
+                </div>
+
+                <!-- Renov 1 -->
+                <div id="modal-content-renov-1">
+                <img src="assets/img/portfolio/renov1.png" class="img-fluid rounded mb-3" alt="Renov 1 - Renovasi rumah 2 lantai">
+                <p class="mb-3 small text-body-secondary">
+                    Renovasi menyeluruh rumah 2 lantai: perkuatan struktur, pembaruan layout, dan upgrade utilitas.
+                </p>
+                <dl class="row small mb-0">
+                    <dt class="col-4">Lokasi</dt><dd class="col-8">Kota Yogyakarta</dd>
+                    <dt class="col-4">Tahun</dt><dd class="col-8">2023</dd>
+                    <dt class="col-4">Luas</dt><dd class="col-8">±150 m²</dd>
+                    <dt class="col-4">Scope</dt><dd class="col-8">Struktur, MEP, finishing</dd>
+                    <dt class="col-4">Status</dt><dd class="col-8">Selesai</dd>
+                </dl>
+                </div>
+            </div>
+            </section>
+
 
             </main>
 
@@ -245,7 +291,7 @@
                     </p>
                     <p class="mb-1">
                         ☎ <a href="https://wa.me/6285334058103?text=Saya%20mau%20bertanya,%20" 
-                            class="link-secondary text-decoration-none">+62 853-3405-8103</a>
+                            class="link-secondary text-decoration-none">+62 895-1018-2506</a>
                     </p>
                     <p class="mb-0">
                         ✉ <a href="mailto:info@putramanusantara.com" 
