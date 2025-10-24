@@ -205,3 +205,97 @@ document.addEventListener("DOMContentLoaded", function(){
     carouselInner.appendChild(slide);
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) Pastikan modal ada; kalau tidak, buat skeleton-nya
+  let modalEl = document.getElementById('portfolioModal');
+  if (!modalEl) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+      <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true" aria-labelledby="portfolioModalLabel">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="portfolioModalLabel" class="modal-title">Detail Proyek</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              // <a href="#" target="_self" class="btn btn-primary d-none" id="btnProjectPage">Halaman Proyek</a>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    modalEl = wrapper.firstElementChild;
+    document.body.appendChild(modalEl);
+  }
+
+  const modalTitle = modalEl.querySelector('.modal-title');
+  const modalBody  = modalEl.querySelector('.modal-body');
+  const btnProject = modalEl.querySelector('#btnProjectPage');
+
+  // Helper: isi modal dari trigger
+  function fillModalFromTrigger(trigger) {
+    const title    = trigger.getAttribute('data-title')   || 'Detail Proyek';
+    const selector = trigger.getAttribute('data-content') || '';
+    const linkUrl  = trigger.getAttribute('data-link')    || '';
+
+    if (modalTitle) modalTitle.textContent = title;
+
+    const payload = selector ? document.querySelector(selector) : null;
+    if (modalBody) {
+      modalBody.innerHTML = '';
+      if (payload) {
+        const frag = document.createDocumentFragment();
+        Array.from(payload.children).forEach(node => frag.appendChild(node.cloneNode(true)));
+        modalBody.appendChild(frag);
+      } else {
+        modalBody.innerHTML = '<p class="text-muted mb-0">Konten proyek belum tersedia.</p>';
+      }
+    }
+
+    if (btnProject) {
+      if (linkUrl) {
+        btnProject.classList.remove('d-none');
+        btnProject.setAttribute('href', linkUrl);
+      } else {
+        btnProject.classList.add('d-none');
+        btnProject.removeAttribute('href');
+      }
+    }
+  }
+
+  // 2) Delegasi klik: buka modal manual (hindari handler data-bs-toggle bawaan)
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.portfolio-trigger');
+    if (!trigger) return;
+
+    // kalau markup masih pakai data-bs-toggle/target, stop propagation biar Bootstrap tidak double-handle
+    e.preventDefault();
+    e.stopPropagation();
+
+    fillModalFromTrigger(trigger);
+
+    // Tampilkan modal via API Bootstrap
+    // (pastikan bootstrap.bundle.min.js yang dipakai—ada Modal di global "bootstrap")
+    const Modal = window.bootstrap?.Modal;
+    if (Modal) {
+      Modal.getOrCreateInstance(modalEl).show();
+    } else {
+      // fallback aman kalau namespace global tidak ada (misal pakai ESM): trigger event native
+      const ev = new Event('show.bs.modal', { bubbles: true, cancelable: true });
+      modalEl.dispatchEvent(ev);
+      modalEl.classList.add('show');
+      modalEl.style.display = 'block';
+      modalEl.removeAttribute('aria-hidden');
+      modalEl.setAttribute('aria-modal', 'true');
+    }
+  });
+
+  // 3) Bersihkan isi saat modal ditutup
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    if (modalBody) modalBody.innerHTML = '';
+  });
+});
