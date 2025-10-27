@@ -1,284 +1,954 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="auto">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Project - Putrama Nusantara</title>     
-        <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
-            rel="stylesheet" 
-            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
-            crossorigin="anonymous">
-            <meta name="theme-color" content="#712cf9">
-        
-        <link href="css/style.css" rel="stylesheet">
-        <link href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.css" rel="stylesheet">
-    </head>
-        <body>
-            <!-- SVG symbols for icons -->
-            <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-                <symbol
-                id="moon-stars-fill"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-                >
-                <path
-                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
-                />
-                <path
-                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
-                />
-                </symbol>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                <symbol id="sun-fill" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                <path
-                    d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zm-9.193-9.193a.5.5 0 0 1-.707 0L2.05 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"
-                />
-                </symbol>
-            </svg>
-            <!-- Wrapper tombol navigasi dan WhatsApp -->
-                <div class="position-fixed end-0 me-3 d-flex flex-column align-items-end gap-2" style="bottom: 20px; z-index: 1050;">
-                
-                <!-- Tombol WhatsApp -->
+  <title>Portofolio Proyek Konstruksi — Putrama Nusantara | Bangun & Renovasi Rumah Yogyakarta</title>
+  <meta name="description" content="Lihat portofolio proyek Putrama Nusantara: bangun baru dan renovasi rumah di Yogyakarta & sekitarnya. Lengkap dengan foto, lokasi, tahun, dan lingkup pekerjaan.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://putramanusantara.com/project.html">
+  <link rel="alternate" hreflang="id" href="https://putramanusantara.com/project.html">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)">
 
-                    <div class="nav-item ms-3">
-                        <a href="https://wa.me/6285334058103?text=Saya%20mau%20bertanya,%20" 
-                            target="_blank" 
-                            class="btn-whatsapp"
-                            title="Chat via WhatsApp">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" 
-                                class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 
-                                    3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 
-                                    7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 
-                                    7.93-7.93A7.9 7.9 0 0 0 13.6 
-                                    2.326zM7.994 14.521a6.6 6.6 0 0 
-                                    1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 
-                                    6.56 0 0 1-1.007-3.505c0-3.626 
-                                    2.957-6.584 6.591-6.584a6.56 
-                                    6.56 0 0 1 4.66 1.931 6.56 
-                                    6.56 0 0 1 1.928 4.66c-.004 
-                                    3.639-2.961 6.592-6.592 
-                                    6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                            </svg>
-                            <span class="whatsapp-text">Chat on WhatsApp</span>
-                        </a>
-                    </div>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Putrama Nusantara">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Portofolio Proyek Konstruksi — Putrama Nusantara">
+  <meta property="og:description" content="Contoh proyek bangun & renovasi rumah di Yogyakarta dan sekitarnya.">
+  <meta property="og:url" content="https://putramanusantara.com/project.html">
+  <meta property="og:image" content="https://putramanusantara.com/og/project.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-                <!-- Tombol Up -->
-                <button class="btn btn-outline-secondary btn-circle py-2" id="btnUp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
-                    class="bi bi-arrow-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 
-                            .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 
-                            .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-                    </svg>
-                </button>
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//unpkg.com">
+
+  <!-- CSS Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        referrerpolicy="no-referrer">
+
+  <!-- Site CSS (kompatibel dengan body.light-mode/dark-mode & .logo-img, Isotope, dll) -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Preload LCP image (opsional: sesuaikan path gambar terberat di above-the-fold) -->
+  <link rel="preload" as="image" href="assets/img/portfolio/bangun1.png" imagesizes="100vw">
+
+  <!-- Sinkronkan data-bs-theme sejak awal (agar Dropdown di main.js dapat mendeteksi tema) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-bs-theme', saved || (dark ? 'dark' : 'light'));
+      } catch (e) { root.setAttribute('data-bs-theme', 'light'); }
+    })();
+  </script>
+
+  <!-- Structured Data: Organization/LocalBusiness (ConstructionCompany) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ConstructionCompany",
+    "name":"Putrama Nusantara",
+    "url":"https://putramanusantara.com",
+    "logo":"https://putramanusantara.com/logo-light.png",
+    "image":"https://putramanusantara.com/logo-light.png",
+    "telephone":"+6289510182506",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Jl. Klaseman Raya, Kaliurang km. 7",
+      "addressLocality":"Sleman",
+      "addressRegion":"DI Yogyakarta",
+      "addressCountry":"ID"
+    },
+    "sameAs":[
+      "https://facebook.com/putramanusantara",
+      "https://instagram.com/putramanusantara"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem","position":1,
+        "name":"Beranda","item":"https://putramanusantara.com/index.html"
+      },
+      {
+        "@type":"ListItem","position":2,
+        "name":"Portofolio Proyek","item":"https://putramanusantara.com/project.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="light-mode">
+  <!-- SVG icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zm-9.193-9.193a.5.5 0 0 1-.707 0L2.05 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"/>
+    </symbol>
+  </svg>
+
+  <!-- Floating actions: WhatsApp + Back to top -->
+  <div class="position-fixed end-0 me-3 d-flex flex-column align-items-end gap-2" style="bottom: 20px; z-index: 1050;">
+    <div class="nav-item ms-3">
+      <a href="https://wa.me/6289510182506?text=Saya%20mau%20bertanya,%20"
+         target="_blank" rel="noopener"
+         class="btn-whatsapp"
+         title="Chat via WhatsApp" aria-label="Chat via WhatsApp">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-whatsapp" viewBox="0 0 16 16" aria-hidden="true">
+           <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+         </svg>
+         <span class="whatsapp-text">Chat via WhatsApp</span>
+      </a>
+    </div>
+
+    <button class="btn btn-outline-secondary btn-circle py-2" id="btnUp" aria-label="Kembali ke atas">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+           class="bi bi-arrow-up" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <div class="logo-crop">
+        <a href="index.html">
+          <img src="logo-light.png" alt="Logo Putrama Nusantara (mode terang)" class="logo-img">
+        </a>
+      </div>
+
+      <button id="btnThemeToggle" aria-label="Toggle Dark/Light Mode" title="Ganti Tema" type="button">
+        <svg id="icon-moon" class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+          <use href="#moon-stars-fill"></use>
+        </svg>
+        <svg id="icon-sun" class="bi" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+          <use href="#sun-fill"></use>
+        </svg>
+      </button>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html" aria-current="page">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <div class="container my-5">
+      <div class="row hero-section p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg justify-content-center section-bg">
+        <div class="col-12 col-md-9 p-3 p-lg-5 pt-lg-3 text-center">
+          <h1 class="fw-light hero-title">Portofolio Proyek Putrama Nusantara</h1>
+          <p class="lead text-body-secondary hero-subtitle">
+            Pengalaman bangun baru & renovasi rumah—fokus pada struktur, finishing, dan pengawasan harian.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio section">
+  <div class="container">
+
+    <!-- Filters (tetap <li> agar cocok dengan main.js) -->
+    <ul class="portfolio-filters isotope-filters" aria-label="Filter proyek">
+      <li data-filter="*" class="filter-active" role="button" aria-pressed="true">All</li>
+      <li data-filter=".filter-bangun" role="button" aria-pressed="false">Bangun</li>
+      <li data-filter=".filter-renov" role="button" aria-pressed="false">Renov</li>
+    </ul>
+
+    <!-- Grid -->
+    <div class="row gy-4 isotope-container">
+
+      <!-- ========== ITEM 1: Bangun 1 (ASLI) ========== -->
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Bangun 1 — Rumah Dedy"
+           data-content="#modal-content-bangun-1"
+           aria-label="Buka detail proyek Bangun 1">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-primary rounded-pill">Bangun</span>
+              <span class="badge bg-secondary rounded-pill">2024</span>
+              <span class="badge bg-success rounded-pill">Selesai</span>
             </div>
- 
-            <nav class="navbar navbar-expand-md">
-                <div class="container">
-                    <div class="logo-crop">
-                        <a href="index.html">
-                            <img src="logo-light.png"
-                            alt="logo-pratma-light-mode"
-                            class="logo-img"
-                            id="logo"/>
-                        </a>
-                    </div>
-                    <button
-                        id="btnThemeToggle"
-                        aria-label="Toggle Dark Mode"
-                        title="Toggle Dark Mode"
-                        type="button"
-                    >
-                        <svg
-                        id="icon-moon"
-                        class="bi"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        >
-                        <use xlink:href="#moon-stars-fill"></use>
-                        </svg>
-                        <svg
-                        id="icon-sun"
-                        class="bi"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        >
-                        <use xlink:href="#sun-fill"></use>
-                        </svg>
-                    </button>    
-                    <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                    </button>
-                        
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
 
-                            <!-- Service Dropdown -->
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdown" 
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
-                                <span class="caret-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" 
-                                    fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                    <path
-                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 
-                                        2.345 4 3.204 4h9.592a1 1 0 0 1 .753 
-                                        1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="service.html">Pelayanan</a></li>
-                                <li><a class="dropdown-item" href="service.html">Estimasi Biaya</a></li>
-                            </ul>
-                            </li>
+            <img src="assets/img/portfolio/bangun1.png"
+                 class="img-fluid"
+                 alt="Bangun 1 — Rumah Dedy, Sleman (2024)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
 
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        </ul>
-                        </div>
-                </div>
-            </nav>
-             
-            <main> 
-                <div class="container my-5">
-                    <div class="row hero-section row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg justify-content-center">
-                        <div class="col-12 col-md-8 col-lg-7 p-3 p-lg-5 pt-lg-3 text-center">
-                            <h1 class="fw-light">Projek Putrama Nusantara</h1>
-                            <p class="lead text-body-secondary">Beberapa pengalaman dalam mengerjakan projek konstruksi di antaranya yaitu pekerjaan bangun dan renovasi</p>
-                            </div>
-                        </div>
-                    </div>
-                
-                <section id="portfolio" class="portfolio section">
-                    <div class="container">
-                        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-                        <ul class="portfolio-filters isotope-filters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-bangun">Bangun</li>
-                            <li data-filter=".filter-renov">Renov</li>
-                        </ul>
-                        <div class="row gy-4 isotope-container">
-                            <!-- Filter: App -->
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
-                                <img src="assets/img/portfolio/bangun1.jpg" class="img-fluid" alt="rumah">
-                                <div class="portfolio-info">
-                                <h4>Bangun 1</h4>
-                                <p>Rumah Dedy</p>
-                                </div>
-                            </div>
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Bangun 1 — Rumah Dedy</h4>
+                <p class="mb-3">Sleman, Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±120 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 4 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-helmet-safety me-1"></i> Struktur + Finishing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
-                                <img src="assets/img/portfolio/bangun2.jpg" class="img-fluid" alt="kos-kosan">
-                                <div class="portfolio-info">
-                                <h4>Bangun 2</h4>
-                                <p>Rumah adit</p>
-                                </div>
-                            </div>
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Bangun 1</h4>
+            <p class="mb-0">Rumah Dedy</p>
+          </div>
+        </a>
+      </div>
 
-                            <!-- Filter: Card -->
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
-                                <img src="assets/img/portfolio/renov1.jpg" class="img-fluid" alt="renov rumah">
-                                <div class="portfolio-info">
-                                <h4>Renov 1</h4>
-                                <p>renov rumah dedy</p>
-                                </div>
-                            </div>
+      <!-- ========== ITEM 2: Renov 1 (ASLI) ========== -->
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Renov 1 — Rumah 2 Lantai"
+           data-content="#modal-content-renov-1"
+           aria-label="Buka detail proyek Renov 1">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-warning text-dark rounded-pill">Renov</span>
+              <span class="badge bg-secondary rounded-pill">2023</span>
+              <span class="badge bg-success rounded-pill">Selesai</span>
+            </div>
 
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
-                                <img src="assets/img/portfolio/renov2.jpg" class="img-fluid" alt="renov rumah">
-                                <div class="portfolio-info">
-                                <h4>Renov 2</h4>
-                                <p>renov rumah dedy</p>
-                                </div>
-                            </div>
-                        </div>
+            <img src="assets/img/portfolio/renov1.png"
+                 class="img-fluid"
+                 alt="Renov 1 — Renovasi rumah 2 lantai, Yogyakarta (2023)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
 
-                        </div>
-                    </div>
-                    </section>
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Renov 1 — Rumah 2 Lantai</h4>
+                <p class="mb-3">Kota Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±150 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 3 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Struktur + MEP + Finishing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-            </main>
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Renov 1</h4>
+            <p class="mb-0">Renovasi rumah 2 lantai</p>
+          </div>
+        </a>
+      </div>
 
-            <footer id="footer" class="container py-5"> 
-                <div class="row align-items-center"> 
-                    <!-- Logo kiri -->
-                    <div class="col-12 col-md-4 mb-3 mb-md-0"> 
-                    <div class="logo-crop">
-                        <a href="index.html">
-                        <img src="logo-light.png"
-                            alt="logo-putrama-light-mode"
-                            class="logo-img"
-                            id="logo"/>
-                        </a>
-                    </div> 
-                    <small class="d-block mt-2 text text-body-secondary">&copy; 2017–2025</small> 
-                    </div> 
+      <!-- ========== ITEM 3: Bangun 2 (DUMMY) ========== -->
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Bangun 2 — Rumah Tegar"
+           data-content="#modal-content-bangun-2"
+           aria-label="Buka detail proyek Bangun 2">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-primary rounded-pill">Bangun</span>
+              <span class="badge bg-secondary rounded-pill">2025</span>
+              <span class="badge bg-info rounded-pill text-dark">On‑going</span>
+            </div>
 
-                    <!-- Contact tengah -->
-                    <div class="col-12 col-md-4 mb-3 mb-md-0"> 
-                    <h5>Contact</h5> 
-                    <p class="text-muted mb-1">
-                        📍 Jl. Klaseman Raya, Kaliurang km. 7, Sleman, Yogyakarta
-                    </p>
-                    <p class="mb-1">
-                        ☎ <a href="https://wa.me/6285334058103?text=Saya%20mau%20bertanya,%20" 
-                            class="link-secondary text-decoration-none">+62 853-3405-8103</a>
-                    </p>
-                    <p class="mb-0">
-                        ✉ <a href="mailto:info@putramanusantara.com" 
-                            class="link-secondary text-decoration-none">info@putramanusantara.com</a>
-                    </p>
-                    </div>
+            <img src="assets/img/portfolio/bangun2.png"
+                 class="img-fluid"
+                 alt="Bangun 2 — Rumah Tegar, Bantul (2025)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
 
-                    <!-- Social kanan -->
-                    <div class="col-12 col-md-4 text-md-end text-center"> 
-                    <h5>Social</h5> 
-                    <ul class="list-unstyled d-flex gap-3 justify-content-md-end justify-content-center"> 
-                        <li>
-                        <a class="link-secondary text-decoration-none fs-4 social-link" 
-                            href="https://facebook.com/putramanusantara" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        </li> 
-                        <li>
-                        <a class="link-secondary text-decoration-none fs-4 social-link" 
-                            href="https://instagram.com/putramanusantara" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        </li> 
-                    </ul> 
-                    </div> 
-                </div> 
-            </footer>   
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
-                integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
-                crossorigin="anonymous" 
-                class="astro-vvvwv3sm">
-            </script>
-            
-            <!-- main js -->
-              <script src="js/main.js"></script>
-            <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> 
-        </body> 
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Bangun 2 — Rumah Tegar</h4>
+                <p class="mb-3">Bantul, Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±160 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 5 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-helmet-safety me-1"></i> Struktur + Arsitektur</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Bangun 2</h4>
+            <p class="mb-0">Rumah Tegar</p>
+          </div>
+        </a>
+      </div> -->
+
+      <!-- ========== ITEM 4: Renov 2 (DUMMY) ========== -->
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Renov 2 — Kafe Minimalis"
+           data-content="#modal-content-renov-2"
+           aria-label="Buka detail proyek Renov 2">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-warning text-dark rounded-pill">Renov</span>
+              <span class="badge bg-secondary rounded-pill">2024</span>
+              <span class="badge bg-success rounded-pill">Selesai</span>
+            </div>
+
+            <img src="assets/img/portfolio/renov2.png"
+                 class="img-fluid"
+                 alt="Renov 2 — Kafe Minimalis, Sleman (2024)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
+
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Renov 2 — Kafe Minimalis</h4>
+                <p class="mb-3">Sleman, Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±90 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 2 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Interior + MEP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Renov 2</h4>
+            <p class="mb-0">Kafe Minimalis</p>
+          </div>
+        </a>
+      </div> -->
+
+      <!-- ========== ITEM 5: Bangun 3 (DUMMY) ========== -->
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bangun">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Bangun 3 — Ruko Sudirman"
+           data-content="#modal-content-bangun-3"
+           aria-label="Buka detail proyek Bangun 3">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-primary rounded-pill">Bangun</span>
+              <span class="badge bg-secondary rounded-pill">2024</span>
+              <span class="badge bg-success rounded-pill">Selesai</span>
+            </div>
+
+            <img src="assets/img/portfolio/bangun3.png"
+                 class="img-fluid"
+                 alt="Bangun 3 — Ruko Sudirman, Kota Yogyakarta (2024)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
+
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Bangun 3 — Ruko Sudirman</h4>
+                <p class="mb-3">Kota Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±210 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 6 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-helmet-safety me-1"></i> Struktur + Arsitektur + MEP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Bangun 3</h4>
+            <p class="mb-0">Ruko Sudirman</p>
+          </div>
+        </a>
+      </div> -->
+
+      <!-- ========== ITEM 6: Renov 3 (DUMMY) ========== -->
+      <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-renov">
+        <a href="#"
+           class="d-block text-reset text-decoration-none portfolio-trigger"
+           data-bs-toggle="modal"
+           data-bs-target="#portfolioModal"
+           data-title="Renov 3 — Apartemen Seturan"
+           data-content="#modal-content-renov-3"
+           aria-label="Buka detail proyek Renov 3">
+          <div class="position-relative">
+            <div class="position-absolute top-0 start-0 m-2 d-flex gap-2">
+              <span class="badge bg-warning text-dark rounded-pill">Renov</span>
+              <span class="badge bg-secondary rounded-pill">2025</span>
+              <span class="badge bg-info rounded-pill text-dark">On‑going</span>
+            </div>
+
+            <img src="assets/img/portfolio/renov3.png"
+                 class="img-fluid"
+                 alt="Renov 3 — Apartemen Seturan, Sleman (2025)"
+                 loading="lazy" decoding="async"
+                 width="800" height="600"
+                 style="aspect-ratio:4/3; object-fit:cover;">
+
+            <div class="overlay">
+              <div>
+                <h4 class="mb-1">Renov 3 — Apartemen Seturan</h4>
+                <p class="mb-3">Sleman, Yogyakarta</p>
+                <ul class="list-inline mb-0 small">
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-ruler-combined me-1"></i> ±65 m²</li>
+                  <li class="list-inline-item me-3"><i class="fa-solid fa-clock me-1"></i> 1.5 bln</li>
+                  <li class="list-inline-item"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Interior</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-info mt-2">
+            <h4 class="mb-1">Renov 3</h4>
+            <p class="mb-0">Apartemen Seturan</p>
+          </div>
+        </a>
+      </div> -->
+
+    </div> <!-- /.isotope-container -->
+
+    <!-- Carousel skeleton (dibutuhkan oleh main.js agar tidak error) -->
+    <div id="portfolioCarousel" class="carousel slide mt-5" data-bs-ride="false" aria-label="Galeri portofolio">
+      <div class="carousel-inner"><!-- akan diisi dinamis oleh main.js --></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev" aria-label="Sebelumnya">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next" aria-label="Berikutnya">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div> <!-- /.container -->
+
+  <!-- =========================
+       PAYLOAD MODAL (6 PROYEK)
+       ========================= -->
+  <div class="d-none">
+    <!-- ======= MODAL: Bangun 1 ======= -->
+    <div id="modal-content-bangun-1">
+      <div class="mb-3">
+        <div id="gallery-bangun-1" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Bangun 1">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/bangun1.png" class="d-block w-100"
+                   alt="Hasil akhir — Bangun 1" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun1-2.jpg" class="d-block w-100"
+                   alt="Progres struktur — Bangun 1" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun1-3.jpg" class="d-block w-100"
+                   alt="Detail finishing — Bangun 1" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-bangun-1" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-bangun-1" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Sleman, Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2024</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±120 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">4 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Struktur, Arsitektur, Finishing</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">Selesai</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Lahan memanjang, akses material terbatas.</li>
+            <li>Target serah terima 4 bulan.</li>
+            <li>Efisiensi biaya tanpa kompromi kualitas.</li>
+          </ul>
+
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Optimasi grid kolom & pondasi tapak ekonomis.</li>
+            <li>Prefabrikasi elemen & penjadwalan material kritis.</li>
+            <li>Finishing low‑maintenance.</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil</h6>
+          <ul class="small mb-3">
+            <li>Serah terima tepat waktu (minggu ke‑16).</li>
+            <li>Kenyamanan termal meningkat (ventilasi silang).</li>
+            <li>Biaya aktual sesuai estimasi (deviasi &lt; 5%).</li>
+          </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20tertarik%20dengan%20proyek%20Bangun%201.%20Boleh%20konsultasi%3F"
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= MODAL: Renov 1 ======= -->
+    <div id="modal-content-renov-1">
+      <div class="mb-3">
+        <div id="gallery-renov-1" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Renov 1">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/renov1.png" class="d-block w-100"
+                   alt="Hasil akhir — Renov 1 (2 lantai)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov1-before.jpg" class="d-block w-100"
+                   alt="Before — Renov 1" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov1-after.jpg" class="d-block w-100"
+                   alt="After — Renov 1" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-renov-1" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-renov-1" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Kota Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2023</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±150 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">3 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Struktur, MEP, Finishing</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">Selesai</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Perkuatan struktur eksisting untuk lantai 2.</li>
+            <li>Pembongkaran terbatas tanpa ganggu penghuni.</li>
+            <li>Upgrade utilitas sesuai standar keselamatan.</li>
+          </ul>
+
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Balok/kolom komposit & analisis struktur.</li>
+            <li>Sequencing kerja & proteksi area aktif.</li>
+            <li>MEP baru dengan panel & arde sesuai SNI.</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil</h6>
+          <ul class="small mb-3">
+            <li>Aman, nyaman, layout efisien.</li>
+            <li>Downtime penghuni minimal.</li>
+            <li>Biaya perawatan turun, performa naik.</li>
+          </ul>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20tertarik%20dengan%20proyek%20Renov%201.%20Boleh%20konsultasi%3F"
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= MODAL: Bangun 2 (DUMMY) ======= -->
+    <!-- <div id="modal-content-bangun-2">
+      <div class="mb-3">
+        <div id="gallery-bangun-2" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Bangun 2">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/bangun2.png" class="d-block w-100"
+                   alt="Hasil akhir — Bangun 2 (Rumah Tegar)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun2-2.jpg" class="d-block w-100"
+                   alt="Progres struktur — Bangun 2" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun2-3.jpg" class="d-block w-100"
+                   alt="Detail fasad — Bangun 2" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-bangun-2" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-bangun-2" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Bantul, Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2025</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±160 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">5 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Struktur, Arsitektur</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">On‑going</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Keterbatasan akses alat berat di lingkungan padat.</li>
+            <li>Target desain modern hemat energi.</li>
+          </ul>
+
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Modulasi struktur & logistik bertahap.</li>
+            <li>Sun‑shading & ventilasi silang untuk efisiensi.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil (sementara)</h6>
+          <ul class="small mb-3">
+            <li>Progres sesuai jadwal (minggu ke‑10).</li>
+            <li>Pengujian struktur lulus sesuai desain.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20ingin%20konsultasi%20proyek%20serupa%20Bangun%202."
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- ======= MODAL: Renov 2 (DUMMY) ======= -->
+    <!-- <div id="modal-content-renov-2">
+      <div class="mb-3">
+        <div id="gallery-renov-2" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Renov 2">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/renov2.png" class="d-block w-100"
+                   alt="Hasil akhir — Renov 2 (Kafe Minimalis)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov2-before.jpg" class="d-block w-100"
+                   alt="Before — Renov 2 (Kafe)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov2-after.jpg" class="d-block w-100"
+                   alt="After — Renov 2 (Kafe)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-renov-2" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-renov-2" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Sleman, Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2024</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±90 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">2 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Interior, MEP</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">Selesai</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Renov cepat tanpa menutup operasional terlalu lama.</li>
+            <li>Akustik & pencahayaan harus nyaman untuk kafe.</li>
+          </ul>
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Penjadwalan malam/akhir pekan, sistem modular.</li>
+            <li>Penerangan warm + panel akustik tersembunyi.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil</h6>
+          <ul class="small mb-3">
+            <li>Downtime 10 hari, omzet cepat pulih.</li>
+            <li>Suasana nyaman, biaya listrik stabil.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20ingin%20konsultasi%20renov%20kafe%20seperti%20Renov%202."
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- ======= MODAL: Bangun 3 (DUMMY) ======= -->
+    <!-- <div id="modal-content-bangun-3">
+      <div class="mb-3">
+        <div id="gallery-bangun-3" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Bangun 3">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/bangun3.png" class="d-block w-100"
+                   alt="Hasil akhir — Bangun 3 (Ruko Sudirman)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun3-2.jpg" class="d-block w-100"
+                   alt="Pekerjaan struktur — Bangun 3" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/bangun3-3.jpg" class="d-block w-100"
+                   alt="Detail arsitektur — Bangun 3" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-bangun-3" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-bangun-3" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Kota Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2024</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±210 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">6 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Struktur, Arsitektur, MEP</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">Selesai</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Lahan sudut jalan dengan batas KDB ketat.</li>
+            <li>Kebutuhan parkir & sirkulasi loading.</li>
+          </ul>
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Layout efisien & ramp kompak.</li>
+            <li>Fasad berpeneduh untuk iklim tropis.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil</h6>
+          <ul class="small mb-3">
+            <li>Serah terima tepat waktu.</li>
+            <li>Biaya operasional terkendali.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20ingin%20konsultasi%20proyek%20komersial%20seperti%20Bangun%203."
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- ======= MODAL: Renov 3 (DUMMY) ======= -->
+    <!-- <div id="modal-content-renov-3">
+      <div class="mb-3">
+        <div id="gallery-renov-3" class="carousel slide" data-bs-ride="false" aria-label="Galeri proyek Renov 3">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/img/portfolio/renov3.png" class="d-block w-100"
+                   alt="Hasil akhir — Renov 3 (Apartemen Seturan)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov3-before.jpg" class="d-block w-100"
+                   alt="Before — Renov 3 (Apartemen)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/portfolio/renov3-after.jpg" class="d-block w-100"
+                   alt="After — Renov 3 (Apartemen)" width="1200" height="800" loading="lazy" style="object-fit:cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery-renov-3" data-bs-slide="prev" aria-label="Sebelumnya">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery-renov-3" data-bs-slide="next" aria-label="Berikutnya">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 small">
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Lokasi</div><div class="fw-semibold">Sleman, Yogyakarta</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Tahun</div><div class="fw-semibold">2025</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Luas</div><div class="fw-semibold">±65 m²</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Durasi</div><div class="fw-semibold">1.5 bulan</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Scope</div><div class="fw-semibold">Interior</div></div></div>
+        <div class="col-6 col-md-4"><div class="bg-body-tertiary border rounded p-2 h-100"><div class="text-body-secondary">Status</div><div class="fw-semibold">On‑going</div></div></div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h6 class="mb-2">Tantangan</h6>
+          <ul class="small mb-3">
+            <li>Ruang terbatas, perlu storage efisien.</li>
+            <li>Deadline pindah huni cepat.</li>
+          </ul>
+          <h6 class="mb-2">Solusi</h6>
+          <ul class="small mb-0">
+            <li>Built‑in furniture & modul lipat.</li>
+            <li>Koordinasi vendor cepat (finishing & MEP ringan).</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h6 class="mb-2">Hasil (sementara)</h6>
+          <ul class="small mb-3">
+            <li>Progress > 60% (minggu ke‑4).</li>
+            <li>Quality check mingguan.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="https://wa.me/6289510182506?text=Halo%20Putrama%20Nusantara,%20saya%20ingin%20konsultasi%20interior%20apartemen%20seperti%20Renov%203."
+               target="_blank" rel="noopener" class="btn btn-outline-secondary">Konsultasi proyek serupa</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div> <!-- /.d-none payload -->
+</section>
+
+
+
+    <!-- Modal (tersedia statis; main.js juga bisa membuat otomatis bila belum ada) -->
+    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true" aria-labelledby="portfolioModalLabel">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="portfolioModalLabel" class="modal-title">Detail Proyek</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body"><!-- diisi dinamis oleh main.js --></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <div class="logo-crop">
+          <a href="index.html">
+            <img src="logo-light.png" alt="Logo Putrama Nusantara (footer)" class="logo-img">
+          </a>
+        </div>
+        <small class="d-block mt-2 text text-body-secondary">&copy; 2017–2025</small>
+      </div>
+
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <h5>Contact</h5>
+        <p class="text-muted mb-1">
+          📍 Jl. Klaseman Raya, Kaliurang km. 7, Sleman, Yogyakarta
+        </p>
+        <p class="mb-1">
+          ☎ <a href="tel:+6289510182506" class="link-secondary text-decoration-none">+62 895-1018-2506</a>
+          · <a href="https://wa.me/6289510182506?text=Saya%20mau%20bertanya,%20" target="_blank" rel="noopener" class="link-secondary text-decoration-none">WhatsApp</a>
+        </p>
+        <p class="mb-0">
+          ✉ <a href="mailto:info@putramanusantara.com" class="link-secondary text-decoration-none">info@putramanusantara.com</a>
+        </p>
+      </div>
+
+      <div class="col-12 col-md-4 text-md-end text-center">
+        <h5>Social</h5>
+        <ul class="list-unstyled d-flex gap-3 justify-content-md-end justify-content-center">
+          <li>
+            <a class="link-secondary text-decoration-none fs-4 social-link"
+               href="https://facebook.com/putramanusantara" target="_blank" rel="noopener" aria-label="Facebook Putrama Nusantara">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a class="link-secondary text-decoration-none fs-4 social-link"
+               href="https://instagram.com/putramanusantara" target="_blank" rel="noopener" aria-label="Instagram Putrama Nusantara">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS: pustaka (defer) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+          crossorigin="anonymous" defer></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" defer></script>
+
+  <!-- JS utama situs (kompatibel dengan selektor & perilaku di atas) -->
+  <script src="js/main.js" defer></script>
+</body>
 </html>

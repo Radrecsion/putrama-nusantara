@@ -972,3 +972,48 @@ body.dark-mode #footer #footerLogoDark {
 .team-profile:hover .team-photo-wrapper {
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
+
+
+/* =========================
+   CAROUSEL CAPTION SHADOW
+   ========================= */
+#portfolioCarousel .carousel-caption h5,
+#portfolioCarousel .carousel-caption p {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* default shadow */
+  transition: text-shadow 0.3s ease;
+}
+
+/* Light mode: shadow lebih gelap supaya kontras dengan gambar terang */
+body.light-mode #portfolioCarousel .carousel-caption h5,
+body.light-mode #portfolioCarousel .carousel-caption p {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+}
+
+/* Dark mode: shadow lebih lembut supaya tidak terlalu pekat */
+body.dark-mode #portfolioCarousel .carousel-caption h5,
+body.dark-mode #portfolioCarousel .carousel-caption p {
+  text-shadow: 0 2px 6px rgba(255,255,255,0.3);
+}
+
+.portfolio-item {
+  position: relative;
+  display: block;
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* transparansi sedang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
